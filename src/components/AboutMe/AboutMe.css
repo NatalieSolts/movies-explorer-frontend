@@ -1,61 +1,148 @@
-.about-me__column {
+.about-me {
+  align-items: center;
+  align-content: center;
+  flex-direction: column;
   display: flex;
-  justify-content: space-between;
-  width: 100%;
+  justify-content: center;
+}
+.about-me__table {
   padding: 66px 0 0;
+  justify-content: space-between;
+  display: flex;
+  width: 100%;
+}
+@media screen and (max-width: 525px) {
+  .about-me__table {
+    padding-top: 59px;
+    flex-direction: column-reverse;
+  }
 }
 .about-me__info {
-  display: flex;
   flex-direction: column;
+  display: flex;
   max-width: 600px;
+}
+@media screen and (max-width: 815px) {
+  .about-me__info {
+    padding-right: 50px;
+  }
+}
+@media screen and (max-width: 525px) {
+  .about-me__info {
+    padding-right: 0;
+    padding-top: 40px;
+  }
 }
 
 .about-me__name {
-  font-style: normal;
-  font-weight: 400;
-  font-size: 50px;
-  line-height: 58px;
-  letter-spacing: -0.04em;
   margin: 0;
   padding: 0;
+  font-size: 50px;
+  letter-spacing: -0.04em;
+  font-style: normal;
+  line-height: 58px;
+  font-weight: 400;
 }
-
+@media screen and (max-width: 815px) {
+  .about-me__name {
+    font-size: 40px;
+    letter-spacing: -0.04em;
+    line-height: 40px;
+  }
+}
+@media screen and (max-width: 525px) {
+  .about-me__name {
+    line-height: 36px;
+    font-size: 30px;
+  }
+}
 .about-me__profession {
-  margin: 0;
-  padding: 18px 0 0;
+  line-height: 20px;
   font-style: normal;
   font-weight: 500;
   font-size: 18px;
-  line-height: 20px;
+  padding: 18px 0 0;
+  margin: 0;
 }
-
+@media screen and (max-width: 815px) {
+  .about-me__profession {
+    line-height: 18px;
+    font-weight: 500;
+    font-size: 12px;
+    padding: 16px 0 0;
+  }
+}
+@media screen and (max-width: 525px) {
+  .about-me__profession {
+    font-size: 11px;
+    line-height: 16px;
+    padding: 20px 0 0;
+  }
+}
 .about-me__text {
-  margin: 0;
-  padding: 26px 0 0;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 14px;
   line-height: 22px;
-}
-
-.about-me__link-github {
-  margin: 0;
-  padding: 99px 0 0;
   font-style: normal;
-  font-weight: 500;
+  margin: 0;
   font-size: 14px;
-  line-height: 17px;
-  color: black;
-  transition: 0.5s ease;
-  text-decoration: none;
+  padding: 26px 0 0;
+  font-weight: 400;
 }
-.about-me__link-github:hover {
+@media screen and (max-width: 815px) {
+  .about-me__text {
+    padding: 20px 0 0;
+    line-height: 18px;
+    font-weight: 400;
+    font-size: 12px;
+  }
+}
+@media screen and (max-width: 525px) {
+  .about-me__text {
+    font-size: 11px;
+    font-weight: 400;
+    line-height: 16px;
+  }
+}
+.about-me__link {
+  padding: 99px 0 0;
+  text-decoration: none;
+  font-size: 14px;
+  color: black;
+  font-style: normal;
+  line-height: 17px;
+  margin: 0;
+  font-weight: 500;
+  transition: 0.5s ease;
+}
+.about-me__link:hover {
   opacity: 0.5;
 }
-
-.about-me__photo {
-  max-width: 270px;
-  width: 100%;
-  border-radius: 10px;
+@media screen and (max-width: 815px) {
+  .about-me__link {
+    padding: 87px 0 0;
+  }
+}
+@media screen and (max-width: 525px) {
+  .about-me__link {
+    padding: 40px 0 0;
+  }
+}
+.about-me__image {
   object-fit: cover;
+  border-radius: 10px;
+  height: 327px;
+  width: 270px;
+}
+@media screen and (max-width: 815px) {
+  .about-me__image {
+    max-width: 255px;
+    max-height: 307px;
+  }
+}
+@media screen and (max-width: 525px) {
+  .about-me__image {
+    height: 353px;
+    width: 100%;
+    max-height: none;
+    max-width: none;
+  }
 }
