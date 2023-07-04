@@ -3,11 +3,11 @@ import SectionTitle from '../SectionTitle/SectionTitle';
 
 
 
-const Section = ({ title, theme, children }) => {
-    const sectionClass = `section ${theme ? 'section_theme_' + theme : ''}`;
+const Section = ({ title, type, children }) => {
+    const sectionClass = `section ${type ? 'section_type_' + type : ''}`;
     return (
         <section className={sectionClass}>
-            <SectionTitle title={title} />
+            {title && (<SectionTitle title={title} />)}
             {children}
         </section>
     )

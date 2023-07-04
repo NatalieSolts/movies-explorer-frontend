@@ -1,13 +1,12 @@
 import Section from '../Section/Section';
 import './AboutMe.css';
 import imageFoto from '../../images/photo.jpg'
-import { myBirthday } from '../../utils/constants'
 import { Link } from 'react-router-dom';
 import Portfolio from '../Portfolio/Portfolio'
 
 function AboutMe () {
   return (
-    <Section title="Студент" theme='aboutme'>
+    <Section title="Студент" type='aboutme'>
       <div className='about-me'>
         <div className='about-me__table'>
           <div className='about-me__info'>

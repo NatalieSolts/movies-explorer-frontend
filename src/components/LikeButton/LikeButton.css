@@ -1,21 +1,21 @@
 .like-button {
-  width: 24px;
-  height: 24px;
-  display: flex;
   justify-content: center;
-  justify-self: end;
+  transition: all 0.5s ease;
   align-items: center;
   color: white;
   background-color: #f9f9f9;
-  border-radius: 36px;
-  border: none;
-  transition: all 0.5s ease;
+  height: 24px;
+  justify-self: end;
   cursor: pointer;
+  border: none;
+  width: 24px;
+  display: flex;
+  border-radius: 36px;
 }
 @media screen and (max-width: 815px) {
   .like-button {
-    width: 23px;
     height: 21px;
+    width: 23px;
   }
 }
 .like-button_active {

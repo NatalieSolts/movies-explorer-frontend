@@ -1,9 +1,29 @@
-// компонент страницы с поиском по фильмам
+import SearchForm from '../SearchForm/SearchForm';
+import MoviesCardList from '../MoviesCardList/MoviesCardList';
 import './Movies.css';
+import { useState } from 'react';
+import Footer from '../Footer/Footer';
+import { initialFilms } from '../../utils/initialFilms';
 
-const Movies = () => {
+function Movies () {
+  const [films, setFilms] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const remainingFilms = initialFilms.slice(films.length);
+
+  function viewStillFilms () {
+    setIsLoading(true)
+    setTimeout(() => {
+      setIsLoading(false)
+      setFilms([...films, ...remainingFilms.slice(0, 5)])
+    }, 2000)
+  }
+
   return (
-    <div>Movies</div>
+    <>
+      <SearchForm />
+      <MoviesCardList films={films} isLoading={isLoading} remainingFilms={remainingFilms} viewStillFilms={viewStillFilms} />
+      <Footer />
+    </>
   )
 }
 

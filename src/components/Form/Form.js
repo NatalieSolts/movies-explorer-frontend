@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import './Form.css';
 
-const Form = ({
+function Form ({
     name,
     onSubmit,
     isFormValid,
@@ -9,7 +9,7 @@ const Form = ({
     onChange,
     isEditingBegun,
     children
-}) => {
+}) {
     const [validForm, setValidForm] = useState(true);
     function handleChange (e) {
         setValidForm(e.target.validity.valid)

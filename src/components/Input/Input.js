@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import './Input.css';
-const Input = ({
+function Input ({
     errorDefault = false,
     autoFocus = false,
     type,
@@ -10,11 +10,11 @@ const Input = ({
     maxLength,
     label,
     defaultValue,
-}) => {
+}) {
     const [error, setError] = useState(false)
-    function handleChange (e) {
-        !e.target.validity.valid
-            ? setError(e.target.validationMessage)
+    function handleChange (event) {
+        !event.target.validity.valid
+            ? setError(event.target.validationMessage)
             : setError('')
     }
     return (

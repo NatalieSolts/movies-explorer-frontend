@@ -1,6 +1,5 @@
 import './DeleteButton.css';
-const DeleteButton = ({ handleClickDeleteButton }) => {
-
+function DeleteButton ({ handleClickDeleteButton }) {
     return (
         <button
             type='button'

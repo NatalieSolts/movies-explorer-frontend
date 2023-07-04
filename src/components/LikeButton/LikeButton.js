@@ -1,6 +1,6 @@
 import './LikeButton.css';
 
-const LikeButton = ({ isLiked, handleClickLikeButton }) => {
+function LikeButton ({ isLiked, handleClickLikeButton }) {
     return (
         <button
             type='button'

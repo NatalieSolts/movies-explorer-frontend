@@ -1,8 +1,7 @@
 import { useNavigate } from 'react-router-dom';
-import { Link } from 'react-router-dom';
 import './NotFound.css';
 
-const NotFound = () => {
+function NotFound () {
     const navigate = useNavigate();
     const handleClick = () => {
         navigate(-1);

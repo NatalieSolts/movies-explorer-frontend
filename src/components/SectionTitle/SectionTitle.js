@@ -1,4 +1,3 @@
-// компонент заголовка каждого раздела
 import './SectionTitle.css'
 const SectionTitle = ({ title }) => {
     return (

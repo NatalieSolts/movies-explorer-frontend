@@ -1,15 +1,15 @@
 .form {
-  width: 100%;
-  display: flex;
   padding-top: 20px;
-  flex-direction: column;
   height: 380px;
+  display: flex;
   justify-content: space-between;
+  flex-direction: column;
+  width: 100%;
 }
 @media screen and (max-width: 525px) {
   .form {
-    padding-top: 60px;
     height: 468px;
+    padding-top: 60px;
   }
 }
 
@@ -18,15 +18,15 @@
 }
 
 .form__input-wrapper_type_edit-profile {
-  flex-direction: row;
+  line-height: 1.18;
+  font-size: 11px;
+  padding-bottom: 15px;
+  color: var(--white);
+  border-bottom: 1px solid var(--divider-bg-color-dark-grey);
   align-items: center;
   padding-top: 17px;
-  padding-bottom: 15px;
-  border-bottom: 1px solid var(--divider-bg-color-dark-grey);
-  font-size: 11px;
+  flex-direction: row;
   font-weight: 500;
-  line-height: 1.18;
-  color: var(--white);
 }
 
 .form__input-wrapper_type_edit-profile:last-of-type {
@@ -34,14 +34,14 @@
 }
 
 .form__input_type_edit-profile {
+  padding-bottom: 0;
   width: 350px;
   padding-top: 0;
-  padding-bottom: 0;
   border-bottom-color: transparent;
   font-size: 11px;
-  font-weight: 400;
-  line-height: 1.18;
   text-align: right;
+  line-height: 1.18;
+  font-weight: 400;
 }
 
 .form__input:focus-visible {
@@ -49,11 +49,11 @@
 }
 
 .form__errors-wrapper {
+  gap: 10px;
   margin-top: 32px;
   display: flex;
-  flex-direction: column;
-  gap: 10px;
   opacity: 0;
+  flex-direction: column;
 }
 
 .form__errors-wrapper_active {
@@ -61,13 +61,13 @@
 }
 
 .form__error-name {
-  margin: 0;
-  opacity: 0;
-  font-family: var(--main-font);
-  font-size: 10px;
-  font-weight: 500;
   line-height: 1.2;
+  opacity: 0;
+  margin: 0;
+  font-family: var(--main-font);
+  font-weight: 500;
   color: var(--red);
+  font-size: 10px;
 }
 
 .form__error-name_active {
@@ -75,8 +75,8 @@
 }
 
 .form__input-error_type_edit-profile {
-  margin-top: 2px;
   margin-bottom: 2px;
+  margin-top: 2px;
 }
 
 .form__input-error_active {
@@ -84,28 +84,28 @@
 }
 
 .form__btn-submit {
-  width: 100%;
-  height: 45px;
   padding: 0;
-  margin-top: 20px;
-  border: none;
-  border-radius: 3px;
-  background-color: black;
   cursor: pointer;
-  transition: all 0.5s ease;
-  font-size: 14px;
-  font-weight: 500;
-  line-height: 17px;
-  font-family: var(--font-family);
+  border-radius: 3px;
+  border: none;
   color: white;
+  margin-top: 20px;
+  font-size: 14px;
+  font-family: var(--font-family);
+  background-color: black;
+  width: 100%;
+  transition: all 0.5s ease;
+  line-height: 17px;
+  font-weight: 500;
+  height: 45px;
 }
 
 .form__btn-submit:disabled {
-  background-color: white;
   color: black;
-  border: 1px solid #a0a0a0;
-  opacity: 0.5;
+  background-color: white;
   cursor: default;
+  opacity: 0.5;
+  border: 1px solid #a0a0a0;
 }
 
 .form__btn-submit_hidden {
@@ -132,7 +132,7 @@
   }
 
   .form__btn-submit {
-    font-size: 12px;
     line-height: 1.25;
+    font-size: 12px;
   }
 }
