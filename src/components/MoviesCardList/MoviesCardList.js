@@ -4,22 +4,28 @@ import MoviesCard from '../MoviesCard/MoviesCard';
 import Preloader from '../Preloader/Preloader';
 import { useEffect, useState } from 'react';
 
-function MoviesCardList ({ films, isLoading, remainingFilms, viewStillFilms, handleClickDeleteButton }) {
+function MoviesCardList ({ films, isLoading, unwatchedFilms, remainingFilmsToView, handleClickDelete }) {
 
   useEffect(() => {
-    viewStillFilms && viewStillFilms()
+    remainingFilmsToView && remainingFilmsToView()
   }, [])
 
   return (
     <Section type="movies" >
       {films.length ? (
         <ul className='movies-card-list'>
-          {films.map((movie, index) => <MoviesCard movie={movie} key={index} handleClickDeleteButton={handleClickDeleteButton} />)}
+          {films.map((movie, index) => <MoviesCard movie={movie} key={index} handleClickDelete={handleClickDelete} />)}
         </ul>
-      ) : !isLoading ? <h3>Список фильмов пуст</h3> : ''}
+      ) : !isLoading ? <h3 className='movies-card-list__title'>Список фильмов пуст</h3> : ''}
 
       {isLoading ? <Preloader /> : ""}
-      {remainingFilms?.length ? <button className='movies-card-list-btn' onClick={viewStillFilms}>Ещё</button> : ''}
+      {unwatchedFilms?.length ?
+        <button
+          className='movies-card-list-button'
+          onClick={remainingFilmsToView}
+        >
+          Ещё
+        </button> : ''}
     </Section>
   )
 }

@@ -1,44 +1,47 @@
-// компонент, который отрисовывает шапку сайта на страницу
-import { Link, Routes, Route } from 'react-router-dom';
-import Logo from '../Logo/Logo';
 import './Header.css';
+import { Link, Route, Routes } from 'react-router-dom';
+import Logo from '../Logo/Logo';
 import Navigation from '../Navigation/Navigation';
 
-function Header ({ menuOpened, handleMenuOpened }) {
+function Header (props) {
+  const { menuOpened, isMenuOpen } = props;
+  function handleClickMenu () {
+    isMenuOpen(!menuOpened)
+  }
+  function handleCloseMenu () {
+    isMenuOpen(false)
+  }
   return (
     <header className='header'>
-
-
       <Routes>
-        {/* для главной */}
+        {/* ГЛАВНАЯ */}
         <Route path="/" element={
           <>
             <Logo />
-            <nav className='header__nav-links'>
-              <Link to="/signup" className='header__link header__link_auth'>Регистрация</Link>
-              <Link to="/signin" className='header__link header__link_auth header__link_type_btn'>Войти</Link>
+            <nav className='header__links'>
+              <Link to="/signup" className='header__link header__link_no-auth'>Регистрация</Link>
+              <Link to="/signin" className='header__link header__link_no-auth header__link_type_button'>Войти</Link>
             </nav>
           </>
         } />
-        {/* для остальных страниц */}
+        {/* ОСТАЛЬНОЕ */}
         <Route path="*" element={
           <>
-            <nav className='header__nav-links header__nav-links_hidden_tablet-mobile'>
+            <nav className='header__links header__links_hidden_mob'>
               <Logo />
               <Link to="/movies" className='header__link'>Фильмы</Link>
               <Link to="/saved-movies" className='header__link header__link_medium'>Сохранённые фильмы</Link>
             </nav>
-            <nav className='header__nav-links header__nav-links_hidden_tablet-mobile'>
-              <Link to="/profile" className='header__link header__link_profile'>Аккаунт
-                <div className='header__nav-link-icon'></div>
+            <nav className='header__links header__links_hidden_mob'>
+              <Link to="/profile" className='header__link header__link_account'>Аккаунт
               </Link>
             </nav>
-            <nav className='header__nav-links header__nav-links_hidden_pc'>
+            <nav className='header__links header__links_hidden_comp'>
               <Logo />
-              <button className={`header__btn-menu ${menuOpened ? 'header__btn-menu_close' : ''}`} onClick={() => handleMenuOpened(!menuOpened)}>
+              <button className={`header__btn-menu ${menuOpened ? 'header__btn-menu_close' : ''}`} onClick={handleClickMenu}>
               </button>
             </nav>
-            <Navigation menuOpened={menuOpened} onClose={() => handleMenuOpened(false)} />
+            <Navigation menuOpened={menuOpened} onClose={handleCloseMenu} />
           </>
         } />
       </Routes>

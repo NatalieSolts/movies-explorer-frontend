@@ -21,7 +21,7 @@ const Register = () => {
       <h2 className='section__title'>Добро пожаловать!</h2>
       <Form
         name='login'
-        buttonText='Зарегистрироваться'
+        textForButtonForm='Зарегистрироваться'
         onSubmit={onSubmit}
         onChange={handleChange}
       >
@@ -52,7 +52,7 @@ const Register = () => {
           maxLength={30}
           label='Пароль'
           defaultValue='password123456'
-          errorDefault={true}
+          defaultError={true}
         />
       </Form>
       <p className='section__text'>Уже зарегистрированы?<Link className="section__link" to="/signin">Войти</Link></p>

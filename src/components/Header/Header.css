@@ -18,26 +18,26 @@
     padding: 0 14px;
   }
 }
-.header__nav-links {
+.header__links {
   justify-content: center;
   display: flex;
   align-items: center;
 }
 @media screen and (max-width: 815px) {
-  .header__nav-links {
+  .header__links {
     justify-content: space-between;
   }
 }
-.header__nav-links_hidden_pc {
+.header__links_hidden_comp {
   width: 100%;
 }
 @media screen and (min-width: 821px) {
-  .header__nav-links_hidden_pc {
+  .header__links_hidden_comp {
     display: none;
   }
 }
 @media screen and (max-width: 815px) {
-  .header__nav-links_hidden_tablet-mobile {
+  .header__links_hidden_mob {
     display: none;
   }
 }
@@ -57,18 +57,26 @@
   background-color: inherit;
   transition: all 0.5s ease;
 }
-.header__link_profile {
+.header__link_account {
+  color: #000;
+  text-align: center;
   font-size: 14px;
-  margin-right: 0;
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 500;
   line-height: 16px;
+  width: 100px;
+  border-radius: 20px;
+  background-color: #f9f9f9;
+  height: 32px;
 }
-.header__link_auth {
+.header__link_no-auth {
   margin-right: 30px;
   font-size: 12px;
   line-height: 16px;
 }
 @media screen and (max-width: 525px) {
-  .header__link_auth {
+  .header__link_no-auth {
     margin-right: 15px;
     font-size: 10px;
   }
@@ -76,7 +84,7 @@
 .header__link_medium {
   font-weight: 400;
 }
-.header__link_type_btn {
+.header__link_type_button {
   padding: 8px 20px;
   color: white;
   border-radius: 3px;
@@ -84,23 +92,9 @@
   margin: 0;
 }
 @media screen and (max-width: 525px) {
-  .header__link_type_btn {
+  .header__link_type_button {
     padding: 5px 12px;
   }
-}
-.header__nav-link-icon {
-  width: 10px;
-  height: 10px;
-  background-image: url('../../images/profile-icon.svg');
-  margin-left: 13px;
-  background-repeat: no-repeat;
-  padding: 10px;
-  background-position: center center;
-  border-radius: 6px;
-  background-color: #f9f9f9;
-}
-.header__nav-link-icon:hover {
-  background-color: #807777;
 }
 .header__link:hover {
   opacity: 0.8;

@@ -16,7 +16,7 @@
   font-weight: 500;
   border-bottom: 1px solid black;
 }
-.input_style_error {
+.input_error {
   padding-top: 5px;
   color: #ff4062;
 }

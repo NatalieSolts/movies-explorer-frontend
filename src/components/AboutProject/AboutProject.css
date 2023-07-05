@@ -5,98 +5,22 @@
   display: flex;
   align-items: center;
 }
-.about-project__cards {
-  display: flex;
-  justify-content: space-between;
-  padding: 70px 0 110px;
-}
-@media screen and (max-width: 815px) {
-  .about-project__cards {
-    padding: 70px 0 93px;
-  }
-}
-@media screen and (max-width: 525px) {
-  .about-project__cards {
-    flex-direction: column;
-    padding: 61px 0 60px;
-  }
-}
-
-.about-project__card {
-  padding-right: 52px;
-}
-@media screen and (max-width: 815px) {
-  .about-project__card {
-    padding-right: 37px;
-  }
-}
-@media screen and (max-width: 525px) {
-  .about-project__card {
-    padding-right: 0;
-  }
-}
-.about-project__card:nth-of-type(2) {
-  padding-right: 0;
-}
-@media screen and (max-width: 525px) {
-  .about-project__card:nth-of-type(2) {
-    padding-top: 57px;
-  }
-}
-.about-project__subtitle {
-  padding: 0;
-  font-size: 20px;
-  line-height: 24px;
-  font-weight: 400;
-  font-style: normal;
-  margin: 0;
-}
-@media screen and (max-width: 525px) {
-  .about-project__subtitle {
-    line-height: 22px;
-    font-size: 18px;
-  }
-}
-.about-project__description {
-  padding-top: 26px;
-  line-height: 20px;
-  margin: 0;
-  font-size: 14px;
-  font-weight: 400;
-  font-style: normal;
-}
-@media screen and (max-width: 815px) {
-  .about-project__description {
-    font-weight: 400;
-    font-size: 12px;
-    padding-top: 22px;
-    line-height: 18px;
-  }
-}
-@media screen and (max-width: 525px) {
-  .about-project__description {
-    font-weight: 400;
-    font-size: 11px;
-    line-height: 16px;
-    padding-top: 15px;
-  }
-}
-.about-project__table {
+.about-project__timing {
   grid-template-columns: 1fr 4fr;
   display: grid;
   width: 100%;
 }
 @media screen and (max-width: 815px) {
-  .about-project__table {
+  .about-project__timing {
     grid-template-columns: 140px auto;
   }
 }
 @media screen and (max-width: 525px) {
-  .about-project__table {
+  .about-project__timing {
     grid-template-columns: 100px auto;
   }
 }
-.about-project__table-item {
+.about-project__timing-item {
   color: #a0a0a0;
   line-height: 17px;
   font-style: normal;
@@ -106,25 +30,25 @@
   font-size: 14px;
 }
 @media screen and (max-width: 525px) {
-  .about-project__table-item {
+  .about-project__timing-item {
     font-size: 11px;
     padding: 10px 0;
     line-height: 13px;
   }
 }
-.about-project__table-item_heading {
+.about-project__timing-item_head {
   color: black;
   padding: 9px 0 10px;
   background-color: #e8e8e8;
   font-weight: 400;
 }
 @media screen and (max-width: 525px) {
-  .about-project__table-item_heading {
+  .about-project__timing-item_head {
     padding-top: 12px;
   }
 }
 
-.about-project__table-item_heading:first-of-type {
+.about-project__timing-item_head:first-of-type {
   color: white;
   background-color: black;
 }

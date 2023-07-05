@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import SearchForm from '../SearchForm/SearchForm';
 import MoviesCardList from '../MoviesCardList/MoviesCardList';
 import Footer from '../Footer/Footer';
-import { initialFilms } from '../../utils/initialFilms.js';
+import { initialFilmList } from '../../utils/initialFilmList.js';
 
 const SavedMovies = () => {
   const [films, setFilms] = useState([]);
@@ -14,11 +14,11 @@ const SavedMovies = () => {
     setIsLoading(true);
     setTimeout(() => {
       setIsLoading(false);
-      setFilms(initialFilms.slice(0, 2));
+      setFilms(initialFilmList.slice(0, 2));
     }, 2000)
 
   }, [])
-  function handleClickDeleteButton (currentMovie) {
+  function handleClickDelete (currentMovie) {
     setFilms(
       films.filter((film) => JSON.stringify(film) !== JSON.stringify(currentMovie))
     )
@@ -26,7 +26,7 @@ const SavedMovies = () => {
   return (
     <>
       <SearchForm />
-      <MoviesCardList films={films} isLoading={isLoading} handleClickDeleteButton={handleClickDeleteButton} />
+      <MoviesCardList films={films} isLoading={isLoading} handleClickDelete={handleClickDelete} />
       <Footer />
     </>
   )

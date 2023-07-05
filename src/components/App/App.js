@@ -18,10 +18,11 @@ function App () {
   const [menuOpened, setMenuOpened] = useState(false);
 
   const location = useLocation();
-  const showHeaderPaths = ['/', '/movies', '/saved-movies', '/profile']; // пути, на которых нужно отобразить Header
-  const showHeader = showHeaderPaths.includes(location.pathname); // проверяем, соответствует ли текущий путь одному из путей для отображения Header
+  const currentPath = location.pathname;
+  const pathsToDisplayHeader = ['/', '/movies', '/saved-movies', '/profile'];
+  const shouldDisplayHeader = pathsToDisplayHeader.includes(currentPath);
 
-  const handleMenuOpened = (value) => {
+  const isMenuOpen = (value) => {
     setMenuOpened(value)
   }
   const handleLogin = () => {
@@ -30,19 +31,14 @@ function App () {
   }
   return (
     <div className='page'>
-      {showHeader && <Header menuOpened={menuOpened} handleMenuOpened={handleMenuOpened} />}
+      {shouldDisplayHeader && <Header menuOpened={menuOpened} isMenuOpen={isMenuOpen} />}
       <Routes>
-        {/* <Route path="/"
-          element={<ProtectedRoute
-            element={Main}
-          />}
-        /> */}
         <Route path="/" element={<Main />} />
+        <Route path="/profile" element={<Profile />} />
         <Route path="/movies" element={<Movies />} />
         <Route path="/saved-movies" element={<SavedMovies />} />
-        <Route path="/profile" element={<Profile />} />
-        <Route path="/signin" element={<Login onLogin={handleLogin} isLoading={isLoading} />} />
         <Route path="/signup" element={<Register onRegister={handleRegister} isLoading={isLoading} />} />
+        <Route path="/signin" element={<Login onLogin={handleLogin} isLoading={isLoading} />} />
         <Route path="/signout" element={<SignOut onLoggedIn={setLoggedIn} />} />
         <Route path="*" element={<NotFound />} />
       </Routes>

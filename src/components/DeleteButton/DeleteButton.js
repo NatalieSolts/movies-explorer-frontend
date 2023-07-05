@@ -1,11 +1,10 @@
 import './DeleteButton.css';
-function DeleteButton ({ handleClickDeleteButton }) {
+function DeleteButton ({ handleClickDelete }) {
     return (
         <button
+            onClick={handleClickDelete}
             type='button'
-            className={`delete-button`}
-            onClick={handleClickDeleteButton}
-        // title={`${isLiked ? 'Удалить из избранного' : 'Добавить в избранное'}`}
+            className='delete-button'
         >&#215;</button>
     )
 }

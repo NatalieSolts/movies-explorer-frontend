@@ -1,28 +1,27 @@
-// компонент страницы изменения профиля
-import { useRef, useState } from 'react';
 import './Profile.css';
+import { useRef, useState } from 'react';
 
 const Profile = () => {
-  const [edit, setEdit] = useState(false);
-  const inputRef = useRef(null);
   const [values, setValues] = useState({ name: 'Виталий', email: 'email@yandex.ru' });
-  const [buttonEditDisabled, setButtonEditDisabled] = useState(true)
-  const handleEditClick = () => {
-    setEdit(true);
-    //Установка нулевой задержки гарантирует, что функция будет помещена в очередь выполнения после обновления компонента
-    setTimeout(() => inputRef.current.focus(), 0);
-  }
+  const [isEdited, setIsEdited] = useState(false);
+  const [isDisabledStateBtn, setIsDisabledStateBtn] = useState(true)
 
-  const handleChange = (e) => {
-    console.log(e.target.form['profile-email'].value !== values.email);
-    if (
-      e.target.form['profile-name'].value !== values.name
-      || e.target.form['profile-email'].value !== values.email) {
-      setButtonEditDisabled(false)
+
+  function handleChange (event) {
+    const profileNameInputValue = event.target.form['profile-name'].value;
+    const profileEmailInputValue = event.target.form['profile-email'].value;
+
+    if (profileNameInputValue !== values.name || profileEmailInputValue !== values.email) {
+      setIsDisabledStateBtn(false);
     } else {
-      setButtonEditDisabled(true)
-
+      setIsDisabledStateBtn(true);
     }
+  }
+  function handleCloseEditForm () {
+    setIsEdited(false);
+  }
+  function handleEditClick () {
+    setIsEdited(true);
   }
   return (
     <section className='profile'>
@@ -30,13 +29,12 @@ const Profile = () => {
       <form
         className='profile__form'
         name='profile__form'
-        buttonText='Сохранить'
+        textForButtonForm='Сохранить'
         onChange={handleChange}
       >
         <label className="profile__text">
           Имя
           <input
-            ref={inputRef}
             className='profile__form-input'
             type='text'
             name='profile-name'
@@ -45,7 +43,7 @@ const Profile = () => {
             maxLength={30}
             id='profile-name'
             placeholder='Имя'
-            disabled={!edit}
+            disabled={!isEdited}
             defaultValue={values.name}
           />
         </label>
@@ -60,29 +58,29 @@ const Profile = () => {
             maxLength={30}
             id='profile-email'
             placeholder='E-mail'
-            disabled={!edit}
+            disabled={!isEdited}
             defaultValue={values.email}
           />
         </label>
 
-        {edit ?
-          <div className='profile__form-buttons'>
+        {isEdited ?
+          <div className='profile__form-button-list'>
             <button
               type='submit'
-              className={`profile__form-submit ${buttonEditDisabled ? 'profile__form-submit_disabled' : ''}`}
-              disabled={buttonEditDisabled}
+              className='profile__form-button'
+              disabled={isDisabledStateBtn}
             >Сохранить</button>
             <button
               type='button'
-              className='profile__form-submit'
-              onClick={() => setEdit(false)}
+              className='profile__form-button'
+              onClick={handleCloseEditForm}
             >Отменить</button>
           </div>
           : ''}
       </form>
-      <nav className='profile__links'>
-        {!edit ? <button type='button' className='profile__link' onClick={handleEditClick}>Редактировать</button> : ''}
-        <button type='button' className='profile__link profile__link_color_red'>Выйти из аккаунта</button>
+      <nav className={`profile__links ${isEdited && 'profile__links_is-edited'}`}>
+        {!isEdited ? <button type='button' className='profile__link' onClick={handleEditClick}>Редактировать</button> : ''}
+        <button type='button' className='profile__link profile__link_type_logout'>Выйти из аккаунта</button>
       </nav>
     </section >
   )

@@ -1,23 +1,22 @@
-import { useState } from 'react';
 import './Form.css';
+import { useState } from 'react';
 
 function Form ({
     name,
     onSubmit,
-    isFormValid,
-    buttonText,
+    textForButtonForm,
     onChange,
-    isEditingBegun,
     children
 }) {
     const [validForm, setValidForm] = useState(true);
-    function handleChange (e) {
-        setValidForm(e.target.validity.valid)
-        onChange(e)
+    function handleChange (event) {
+        event.preventDefault();
+        setValidForm(event.target.validity.valid)
+        onChange(event)
     }
-    function handleSubmit (e) {
-        e.preventDefault();
-        onSubmit(e)
+    function handleSubmit (event) {
+        event.preventDefault();
+        onSubmit(event)
     }
     return (
         <form
@@ -35,10 +34,10 @@ function Form ({
             <button
                 type="submit"
                 form={name}
-                className={`form__btn-submit`}
+                className={`form__button`}
                 disabled={!validForm}
             >
-                {buttonText}
+                {textForButtonForm}
             </button>
         </form>
     )

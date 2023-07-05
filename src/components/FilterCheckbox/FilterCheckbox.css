@@ -11,7 +11,7 @@
   padding-top: 31px;
 }
 
-.filter-checkbox__toggle-label {
+.filter-checkbox__label-toggle {
   line-height: 18px;
   column-gap: 14px;
   color: #000000;
@@ -22,7 +22,7 @@
   align-items: center;
 }
 
-.filter-checkbox__toggle-checkbox-invisible {
+.filter-checkbox__toggle-checkbox-novisible {
   height: 1px;
   width: 1px;
   clip: rect(0 0 0 0);
@@ -85,7 +85,7 @@
     margin-top: 30px;
   }
 
-  .filter-checkbox__toggle-label {
+  .filter-checkbox__label-toggle {
     column-gap: 13px;
     font-size: 11px;
   }

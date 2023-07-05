@@ -1,12 +1,12 @@
 import './LikeButton.css';
 
-function LikeButton ({ isLiked, handleClickLikeButton }) {
+function LikeButton ({ isLiked, handleLikeButtonClick }) {
     return (
         <button
             type='button'
             className={`like-button${isLiked ? ' like-button_active' : ''}`}
-            onClick={handleClickLikeButton}
-            title={`${isLiked ? 'Удалить из избранного' : 'Добавить в избранное'}`}
+            onClick={handleLikeButtonClick}
+            title={`${isLiked ? 'Удалить из списка сохраненных' : 'Добавить в сохраненные'}`}
         >&#10084;</button>
     )
 }

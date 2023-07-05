@@ -55,17 +55,6 @@
   font-weight: 500;
 }
 
-.navigation__link-icon {
-  width: 10px;
-  background-position: center center;
-  background-repeat: no-repeat;
-  height: 10px;
-  background-image: url("../../images/profile-icon.svg");
-  background-color: #f9f9f9;
-  border-radius: 6px;
-  padding: 10px;
-}
-
 @media screen and (max-width: 815px) {
   .navigation {
     bottom: 0;
@@ -82,7 +71,7 @@
     opacity: 0;
   }
 }
-.navigation_visible {
+.navigation_displayed {
   visibility: visible;
   opacity: 1;
 }
@@ -102,7 +91,7 @@
   z-index: 10;
 }
 
-.navigation__inner_visible {
+.navigation__inner_displayed {
   transform: translateX(0);
 }
 
@@ -124,7 +113,7 @@
 
 .navigation__link_active::after {
   height: 2px;
-  content: "";
+  content: '';
   right: 0;
   position: absolute;
   bottom: -6px;

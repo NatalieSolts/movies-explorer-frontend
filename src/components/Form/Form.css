@@ -83,7 +83,7 @@
   opacity: 1;
 }
 
-.form__btn-submit {
+.form__button {
   padding: 0;
   cursor: pointer;
   border-radius: 3px;
@@ -100,7 +100,7 @@
   height: 45px;
 }
 
-.form__btn-submit:disabled {
+.form__button:disabled {
   color: black;
   background-color: white;
   cursor: default;
@@ -131,7 +131,7 @@
     width: 200px;
   }
 
-  .form__btn-submit {
+  .form__button {
     line-height: 1.25;
     font-size: 12px;
   }

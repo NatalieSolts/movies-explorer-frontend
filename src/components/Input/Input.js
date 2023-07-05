@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import './Input.css';
 function Input ({
-    errorDefault = false,
+    defaultError = false,
     autoFocus = false,
     type,
     name,
@@ -23,22 +23,22 @@ function Input ({
             <input
                 className={`input
                 ${autoFocus ? " input_focus " : ""}
-                ${errorDefault ? " input_style_error " : ""}
+                ${defaultError ? " input_error " : ""}
                 `}
                 type={type}
                 name={name}
+                id={name}
                 required={required}
                 minLength={minLength}
                 maxLength={maxLength}
-                id={name}
                 onChange={handleChange}
                 placeholder={label}
                 defaultValue={defaultValue || ""}
                 autoFocus={autoFocus}
             />
             <span
-                className={`label__error ${error || errorDefault ? 'label__error_active' : ''}`}
-            >{error ? error : 'Что-то пошло не так...'}
+                className={`label__error ${error || defaultError ? 'label__error_active' : ''}`}
+            >Что-то пошло не так...
             </span>
         </label>
     )

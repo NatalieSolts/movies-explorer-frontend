@@ -3,39 +3,41 @@ import './Navigation.css';
 
 function Navigation ({ menuOpened, onClose }) {
 
-  const setLinkClass = (navLinkData) => navLinkData.isActive
-    ? 'navigation__link navigation__link_active'
-    : 'navigation__link';
-
-  function handleClickCloseByOverlay (e) {
-    if (e.target.classList.contains('navigation_visible')) {
+  function getNavLinkClassName (navLinkData) {
+    if (navLinkData.isActive) {
+      return 'navigation__link navigation__link_active';
+    } else {
+      return 'navigation__link';
+    }
+  }
+  function handleClickCloseByOverlay (event) {
+    if (event.target.classList.contains('navigation_displayed')) {
       onClose();
     }
   };
 
   return (
-    <div className={`navigation ${menuOpened ? 'navigation_visible' : ''}`} onClick={handleClickCloseByOverlay} >
-      <nav className={`navigation__inner ${menuOpened ? 'navigation__inner_visible' : ''}`}>
+    <div className={`navigation ${menuOpened ? 'navigation_displayed' : ''}`} onClick={handleClickCloseByOverlay} >
+      <nav className={`navigation__inner ${menuOpened ? 'navigation__inner_displayed' : ''}`}>
         <ul className='navigation__links'>
-          <li className='navigation__links-item navigation__links-item_type_only-mobile'>
-            <NavLink className={setLinkClass} to='/' onClick={onClose}>
+          <li className='navigation__link navigation__links-item_type_only-mobile'>
+            <NavLink className={getNavLinkClassName} to='/' onClick={onClose}>
               Главная
             </NavLink>
           </li>
-          <li className='navigation__links-item'>
-            <NavLink className={setLinkClass} to='/movies' onClick={onClose}>
+          <li className='navigation__link'>
+            <NavLink className={getNavLinkClassName} to='/movies' onClick={onClose}>
               Фильмы
             </NavLink>
           </li>
-          <li className='navigation__links-item'>
-            <NavLink className={setLinkClass} to='/saved-movies' onClick={onClose}>
+          <li className='navigation__link'>
+            <NavLink className={getNavLinkClassName} to='/saved-movies' onClick={onClose}>
               Сохранённые фильмы
             </NavLink>
           </li>
         </ul>
         <Link className='navigation__link navigation__link_type_with-icon' to='/profile' onClick={onClose}>
           Аккаунт
-          <div className='navigation__link-icon' />
         </Link>
       </nav>
     </div>
