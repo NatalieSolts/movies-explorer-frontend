@@ -7,7 +7,7 @@ function LikeButton ({ isLiked, handleLikeButtonClick }) {
             className={`like-button${isLiked ? ' like-button_active' : ''}`}
             onClick={handleLikeButtonClick}
             title={`${isLiked ? 'Удалить из списка сохраненных' : 'Добавить в сохраненные'}`}
-        >&#10084;</button>
+        ></button>
     )
 }
 export default LikeButton

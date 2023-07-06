@@ -23,7 +23,7 @@
   }
 }
 .section_type_movies {
-  padding: 0px 70px 0px;
+  padding: 70px 70px 0px;
 }
 @media screen and (max-width: 815px) {
   .section_type_movies {

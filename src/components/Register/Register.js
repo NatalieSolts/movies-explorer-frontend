@@ -1,20 +1,20 @@
-// компонент страницы авторизации
-import { useEffect, useState } from 'react';
+import './Register.css';
+import { useState } from 'react';
 import Form from '../Form/Form';
 import Input from '../Input/Input';
 import Logo from '../Logo/Logo';
 import Section from '../Section/Section';
-import './Register.css';
 import { Link } from 'react-router-dom';
 
 const Register = () => {
   const [values, setValues] = useState({})
-  function onSubmit () {
+  function handleChange (event) {
+    const { name, value } = event.target;
+    setValues(prevValues => ({
+      ...prevValues,
+      [name]: value
+    }));
   }
-  function handleChange (e) {
-    setValues({ ...values, [e.target.name]: e.target.value })
-  }
-
   return (
     <Section type='auth'>
       <Logo />
@@ -22,7 +22,6 @@ const Register = () => {
       <Form
         name='login'
         textForButtonForm='Зарегистрироваться'
-        onSubmit={onSubmit}
         onChange={handleChange}
       >
         <Input

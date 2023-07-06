@@ -2,15 +2,17 @@
   justify-content: center;
   transition: all 0.5s ease;
   align-items: center;
-  color: white;
-  background-color: #f9f9f9;
-  height: 24px;
+  height: 30px;
   justify-self: end;
   cursor: pointer;
   border: none;
-  width: 24px;
+  width: 30px;
   display: flex;
   border-radius: 36px;
+  background-image: url('../../images/icon-dislike.svg');
+  background-position: center;
+  background-repeat: no-repeat;
+  margin-top: 16px;
 }
 @media screen and (max-width: 815px) {
   .like-button {
@@ -19,8 +21,9 @@
   }
 }
 .like-button_active {
-  color: #ff4062;
+  background-image: url('../../images/icon-like.svg');
 }
 .like-button:hover {
-  scale: 1.1;
+  transform: translateY(2px);
+  animation: all 0.5s ease;
 }

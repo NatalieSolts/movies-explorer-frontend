@@ -14,7 +14,7 @@ const SavedMovies = () => {
     setIsLoading(true);
     setTimeout(() => {
       setIsLoading(false);
-      setFilms(initialFilmList.slice(0, 2));
+      setFilms(initialFilmList.slice(0, 3));
     }, 2000)
 
   }, [])

@@ -1,16 +1,8 @@
 .filter-checkbox {
-  grid-column-start: 1;
-  grid-column-end: 3;
-  justify-content: center;
-  display: inline-flex;
-  border-bottom: 1px solid #e8e8e8;
   width: 100%;
+  display: flex;
+  padding: 2px 0 0 29px;
 }
-.filter-checkbox__toggle {
-  padding-bottom: 40px;
-  padding-top: 31px;
-}
-
 .filter-checkbox__label-toggle {
   line-height: 18px;
   column-gap: 14px;
@@ -18,7 +10,7 @@
   font-weight: 400;
   display: flex;
   cursor: pointer;
-  font-size: 12px;
+  font-size: 13px;
   align-items: center;
 }
 
@@ -36,20 +28,20 @@
   display: block;
   border-radius: 20px;
   background-color: #e8e8e8;
-  height: 14px;
-  width: 34px;
+  height: 20px;
+  width: 36px;
 }
 
 .filter-checkbox__toggle-checkbox-visible::after {
   border-radius: 50%;
   content: '';
-  height: 10px;
+  height: 16px;
   position: absolute;
   left: 2px;
   top: 2px;
   background-color: #a0a0a0;
   transition: all 0.2s ease;
-  width: 10px;
+  width: 18px;
 }
 
 .filter-checkbox__toggle-checkbox-visible_checked {
@@ -58,19 +50,9 @@
 
 .filter-checkbox__toggle-checkbox-visible_checked::after {
   background-color: #fff;
-  left: 22px;
+  left: 17px;
 }
 
-.filter-checkbox__error {
-  position: absolute;
-  line-height: 1;
-  text-align: center;
-  bottom: 10px;
-  color: red;
-  font-weight: 400;
-  font-size: 11px;
-  left: 26px;
-}
 @media screen and (max-width: 815px) {
   .filter-checkbox__toggle {
     padding-bottom: 40px;
@@ -87,12 +69,9 @@
 
   .filter-checkbox__label-toggle {
     column-gap: 13px;
-    font-size: 11px;
-  }
-
-  .filter-checkbox__error {
-    bottom: 7px;
-    font-size: 10px;
-    left: 15px;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 18px;
   }
 }

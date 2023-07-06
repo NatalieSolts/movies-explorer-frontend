@@ -1,16 +1,21 @@
-import { useEffect, useState } from 'react';
+import Logo from '../Logo/Logo';
+import { useState } from 'react';
 import Form from '../Form/Form';
 import Input from '../Input/Input';
-import Logo from '../Logo/Logo';
 import Section from '../Section/Section';
 import { Link } from 'react-router-dom';
 
 function Login () {
   const [values, setValues] = useState({})
 
-  function handleChange (e) {
-    setValues({ ...values, [e.target.name]: e.target.value })
-  }
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setValues(prevState => ({
+      ...prevState,
+      [name]: value
+    }));
+  };
+
   return (
     <Section type='auth'>
       <Logo />

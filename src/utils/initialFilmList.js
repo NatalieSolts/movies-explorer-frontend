@@ -83,4 +83,22 @@ export const initialFilmList = [
     "duration": 107,
     "image": image12,
   },
+  {
+    "nameRU": "33 слова о дизайне",
+    "liked": false,
+    "duration": 107,
+    "image": image1,
+  },
+  {
+    "nameRU": "33 слова о дизайне",
+    "liked": false,
+    "duration": 107,
+    "image": image2,
+  },
+  {
+    "nameRU": "33 слова о дизайне",
+    "liked": true,
+    "duration": 107,
+    "image": image3,
+  }
 ]

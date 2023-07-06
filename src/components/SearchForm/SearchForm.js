@@ -1,4 +1,3 @@
-// форма поиска, куда пользователь будет вводить запрос
 import './SearchForm.css';
 import Section from '../Section/Section';
 import FilterCheckbox from '../FilterCheckbox/FilterCheckbox';
@@ -15,7 +14,7 @@ const SearchForm = () => {
           placeholder="Фильм"
           required={true}
         />
-        <button className="search-form__submit" type="submit">Найти</button>
+        <button className="search-form__submit" type="submit"></button>
         <FilterCheckbox />
       </form>
     </Section>

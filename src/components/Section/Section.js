@@ -1,8 +1,6 @@
 import './Section.css';
 import SectionTitle from '../SectionTitle/SectionTitle';
 
-
-
 const Section = ({ title, type, children }) => {
     const sectionClass = `section ${type ? 'section_type_' + type : ''}`;
     return (

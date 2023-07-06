@@ -21,14 +21,16 @@ function MoviesCard ({ movie, handleClickDelete }) {
 
   return (
     <li className='movies-card'>
-      <img src={image} alt={nameRU} className='movies-card__image' />
-      <div className='movies-card__description'>
-        <h4 className='movies-card__title'>{nameRU}</h4>
+      <div className='movies-card__content'>
+        <div className='movies-card__description'>
+          <h4 className='movies-card__title'>{nameRU}</h4>
+          <p className='movies-card__duration'>{minutesLeft(duration)}</p>
+        </div>
         {handleClickDelete
           ? <DeleteButton handleClickDelete={() => handleClickDelete(movie)} />
           : <LikeButton isLiked={isLiked} handleLikeButtonClick={handleLikeButtonClick} />}
       </div>
-      <p className='movies-card__duration'>{minutesLeft(duration)}</p>
+      <img src={image} alt={nameRU} className='movies-card__image' />
     </li>
   )
 }

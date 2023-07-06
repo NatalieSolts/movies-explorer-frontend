@@ -71,7 +71,8 @@
   font-style: normal;
   line-height: 42px;
   font-weight: 400;
-  font-family: 'Inter';
+  font-family: 'Inter', sans-serif, Arial, Helvetica;
+  letter-spacing: -1.12px;
 }
 @media screen and (max-width: 815px) {
   .portfolio__link-description {
