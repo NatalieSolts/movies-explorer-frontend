@@ -1,20 +1,18 @@
-// корневой компонент приложения
+import './App.css';
 import { useState } from 'react';
 import { useLocation, Route, Routes } from 'react-router-dom';
-import './App.css';
+import Header from '../Header/Header';
+import Register from '../Register/Register'
+import Login from '../Login/Login'
 import Main from '../Main/Main';
 import Movies from '../Movies/Movies';
 import SavedMovies from '../SavedMovies/SavedMovies';
-import Login from '../Login/Login'
-import Register from '../Register/Register'
-import SignOut from '../SignOut/SignOut'
 import Profile from '../Profile/Profile';
 import NotFound from '../NotFound/NotFound';
-import Header from '../Header/Header';
 
 function App () {
-  const [loggedIn, setLoggedIn] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  const [loggedIn, setLoggedIn] = useState(false);
   const [menuOpened, setMenuOpened] = useState(false);
 
   const location = useLocation();
@@ -25,9 +23,9 @@ function App () {
   const isMenuOpen = (value) => {
     setMenuOpened(value)
   }
-  const handleLogin = () => {
+  function handleRegister () {
   }
-  const handleRegister = () => {
+  function handleLogin () {
   }
   return (
     <div className='page'>
@@ -39,7 +37,6 @@ function App () {
         <Route path="/saved-movies" element={<SavedMovies />} />
         <Route path="/signup" element={<Register onRegister={handleRegister} isLoading={isLoading} />} />
         <Route path="/signin" element={<Login onLogin={handleLogin} isLoading={isLoading} />} />
-        <Route path="/signout" element={<SignOut onLoggedIn={setLoggedIn} />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </div>

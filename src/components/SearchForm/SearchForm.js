@@ -6,14 +6,7 @@ const SearchForm = () => {
   return (
     <Section type="small" >
       <form className='search-form'>
-        <input
-          type="text"
-          className='search-form__input'
-          id="movie-search"
-          name="movie-search"
-          placeholder="Фильм"
-          required={true}
-        />
+        <input name="movie-search" id="movie-search" type="text" required={true} className='search-form__input' placeholder="Фильм" />
         <button className="search-form__submit" type="submit"></button>
         <FilterCheckbox />
       </form>

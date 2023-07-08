@@ -2,6 +2,23 @@
   width: 100%;
   display: flex;
   padding: 2px 0 0 29px;
+  border-left: 1px solid #cbcbcb;
+}
+@media screen and (max-width: 815px) and (min-width: 530px) {
+  .filter-checkbox {
+    padding: 8px 0 8px 20px;
+  }
+}
+@media screen and (max-width: 525px) {
+  .filter-checkbox {
+    grid-column: span 2;
+    border-left: none;
+    justify-content: center;
+    padding-top: 46px;
+    padding-left: 0;
+    padding-bottom: 43px;
+    border-bottom: 1px solid #f9f9f9;
+  }
 }
 .filter-checkbox__label-toggle {
   line-height: 18px;
@@ -73,5 +90,10 @@
     font-style: normal;
     font-weight: 400;
     line-height: 18px;
+  }
+}
+@media screen and (max-width: 525px) {
+  .filter-checkbox__label-toggle {
+    font-size: 11px;
   }
 }

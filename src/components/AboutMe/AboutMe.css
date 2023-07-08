@@ -41,6 +41,7 @@
   font-style: normal;
   margin: 0;
   line-height: 58px;
+  letter-spacing: -2px;
 }
 @media screen and (max-width: 815px) {
   .about-me__name {

@@ -8,12 +8,12 @@ function FilterCheckbox () {
   }
   return (
     <div className='filter-checkbox'>
-      <label className='filter-checkbox__label-toggle' htmlFor='short-films'>
+      <label className='filter-checkbox__label-toggle' htmlFor='short-movies'>
         <input
           className='filter-checkbox__toggle-checkbox-novisible'
           type='checkbox'
-          name='short-films'
-          id='short-films'
+          name='short-movies'
+          id='short-movies'
           checked={isToggle}
           onChange={handleChange}
         />
