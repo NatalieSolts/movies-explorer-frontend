@@ -19,24 +19,11 @@ function Form ({
         onSubmit(event)
     }
     return (
-        <form
-            action="#"
-            name={name}
-            id={name}
-            className={`form form_type_${name}`}
-            noValidate
-            onChange={handleChange}
-            onSubmit={handleSubmit}
-        >
+        <form onSubmit={handleSubmit} onChange={handleChange} name={name} id={name} action="#" className={`form form_type_${name}`} noValidate        >
             <div>
                 {children}
             </div>
-            <button
-                type="submit"
-                form={name}
-                className={`form__button`}
-                disabled={!validForm}
-            >
+            <button type="submit" form={name} className={`form__button`} disabled={!validForm}            >
                 {textForButtonForm}
             </button>
         </form>

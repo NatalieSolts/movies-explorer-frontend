@@ -17,6 +17,18 @@
     min-width: 320px;
   }
 }
+.section_type_aboutme {
+  padding-left: 70px;
+  padding-right: 70px;
+  align-items: stretch;
+}
+@media screen and (max-width: 815px) {
+  .section_type_aboutme {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+}
+
 @media screen and (max-width: 525px) {
   .section_type_aboutme {
     padding: 51px 14px;
@@ -27,7 +39,7 @@
 }
 @media screen and (max-width: 815px) {
   .section_type_movies {
-    padding: 70px 30px 83px;
+    padding: 179px 30px 83px;
   }
 }
 
@@ -59,13 +71,13 @@
 }
 @media screen and (max-width: 815px) and (min-width: 530px) {
   .section_type_small {
-    padding: 0 30px 0px;
+    padding: 11px 30px 0px;
   }
 }
 @media screen and (max-width: 525px) {
   .section_type_small {
-    padding-right: 14px;
-    padding-left: 14px;
+    padding-right: 9px;
+    padding-left: 9px;
   }
 }
 .section_type_auth {

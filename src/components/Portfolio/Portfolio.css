@@ -84,6 +84,7 @@
   .portfolio__link-description {
     line-height: 28px;
     font-size: 18px;
+    letter-spacing: -0.72px;
   }
 }
 .portfolio__link-description:last-of-type {
