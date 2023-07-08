@@ -29,6 +29,7 @@
   padding: 160px 0 151px 0;
   max-width: 730px;
   text-align: center;
+  letter-spacing: -2px;
 }
 @media screen and (max-width: 815px) {
   .promo__title {
@@ -42,6 +43,7 @@
 }
 @media screen and (max-width: 525px) {
   .promo__title {
+    letter-spacing: -1.16px;
     font-weight: 400;
     font-size: 29px;
     line-height: 37px;

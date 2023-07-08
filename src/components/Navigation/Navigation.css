@@ -80,7 +80,6 @@
   transform: translateX(100%);
   padding: 159px 90px 92px;
   flex-direction: column;
-  transition: transform 0.2s ease;
   align-items: center;
   z-index: 10;
   display: flex;
@@ -88,7 +87,7 @@
   background-color: #ffffff;
   box-sizing: border-box;
   flex-basis: 520px;
-  z-index: 10;
+  z-index: 99;
 }
 
 .navigation__inner_displayed {

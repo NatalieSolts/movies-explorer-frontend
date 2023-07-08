@@ -11,6 +11,11 @@
   column-gap: 10px;
   justify-content: start;
 }
+@media screen and (max-width: 525px) {
+  .movies-card__content {
+    grid-template-columns: 82% auto;
+  }
+}
 .movies-card__image {
   object-fit: cover;
   width: 100%;

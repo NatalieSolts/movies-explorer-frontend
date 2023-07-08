@@ -14,12 +14,7 @@
   background-repeat: no-repeat;
   margin-top: 16px;
 }
-@media screen and (max-width: 815px) {
-  .like-button {
-    height: 21px;
-    width: 23px;
-  }
-}
+
 .like-button_active {
   background-image: url('../../images/icon-like.svg');
 }

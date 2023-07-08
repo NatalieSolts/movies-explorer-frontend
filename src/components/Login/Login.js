@@ -20,28 +20,9 @@ function Login () {
     <Section type='auth'>
       <Logo />
       <h2 className='section__title'>Рады видеть!</h2>
-      <Form
-        name='login'
-        textForButtonForm='Войти'
-        onChange={handleChange}
-      >
-        <Input
-          label='E-mail'
-          type='email'
-          name='email'
-          defaultValue='pochta@yandex.ru'
-          required={true}
-          minLength={8}
-          maxLength={30}
-        />
-        <Input
-          label='Пароль'
-          type='password'
-          name='password'
-          required={true}
-          minLength={6}
-          maxLength={30}
-        />
+      <Form name='login' textForButtonForm='Войти' onChange={handleChange}      >
+        <Input label='E-mail' type='email' name='email' defaultValue='pochta@yandex.ru' required={true} minLength={8} maxLength={30} />
+        <Input label='Пароль' type='password' name='password' required={true} minLength={6} maxLength={30} />
       </Form>
       <p className='section__text'>Ещё не зарегистрированы?<Link className="section__link" to="/signup">Регистрация</Link></p>
     </Section>
