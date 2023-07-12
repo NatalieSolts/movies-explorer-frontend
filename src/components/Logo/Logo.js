@@ -5,7 +5,7 @@ import logoImage from '../../images/logo.svg'
 function Logo () {
     return (
         <Link className='logo' to='/' >
-            <img src={logoImage} alt='logo image' className='logo__img' />
+            <img src={logoImage} alt='логотип проекта' className='logo__img' />
         </Link>
     )
 }

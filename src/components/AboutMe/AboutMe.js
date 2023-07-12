@@ -21,9 +21,9 @@ function AboutMe () {
               Свободное время посвящаю семье, спорту и творчеству. Люблю создавать игрушки в стиле тедди.
               В сфере IT я недавно */}
             </p>
-            <Link className='about-me__link' to="https://github.com/NatalieSolts">Github</Link>
+            <Link className='about-me__link' to="https://github.com/NatalieSolts" target='_blank'>Github</Link>
           </div>
-          <img className='about-me__image' src={imageFoto} alt='фотография' />
+          <img className='about-me__image' src={imageFoto} alt='моя фотография - Наталья' />
         </div>
         <Portfolio />
       </div>

@@ -9,7 +9,7 @@ function Portfolio () {
       <ul className='portfolio__cases '>
         {portfolioList.map(({ name, link }, index) => {
           return (<li className='portfolio__item' key={index}>
-            <Link href={link} rel="noreferrer" target="_blank" className="portfolio__link"  >
+            <Link to={link} rel="noreferrer" target="_blank" className="portfolio__link"  >
               <p className='portfolio__link-description'>{name}</p>
               <p className='portfolio__link-description'>&#x2197;</p>
             </Link>

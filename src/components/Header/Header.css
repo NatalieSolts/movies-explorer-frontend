@@ -53,17 +53,15 @@
   cursor: pointer;
   display: flex;
   font-size: 13px;
-  font-weight: 500;
+  font-weight: 400;
   background-color: inherit;
   transition: all 0.5s ease;
+  font-family: 'Inter', sans-serif, Arial, Helvetica;
 }
 .header__link_account {
-  color: #000;
   text-align: center;
   font-size: 14px;
-  font-family: Inter;
   font-style: normal;
-  font-weight: 500;
   line-height: 16px;
   width: 100px;
   border-radius: 20px;
@@ -83,7 +81,7 @@
   }
 }
 .header__link_medium {
-  font-weight: 400;
+  font-weight: 500;
 }
 .header__link_type_button {
   padding: 8px 20px;

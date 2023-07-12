@@ -1,3 +1,4 @@
+import { useNavigate } from 'react-router-dom';
 import './Profile.css';
 import { useRef, useState } from 'react';
 
@@ -5,7 +6,7 @@ const Profile = () => {
   const [values, setValues] = useState({ name: 'Виталий', email: 'email@yandex.ru' });
   const [isEdited, setIsEdited] = useState(false);
   const [isDisabledStateBtn, setIsDisabledStateBtn] = useState(true)
-
+  const navigate = useNavigate();
 
   function handleChange (event) {
     const profileNameInputValue = event.target.form['profile-name'].value;
@@ -22,6 +23,9 @@ const Profile = () => {
   }
   function handleEditClick () {
     setIsEdited(true);
+  }
+  function handleClickButtonSignOut () {
+    navigate("/");
   }
   return (
     <section className='profile'>
@@ -45,7 +49,7 @@ const Profile = () => {
       </form>
       <nav className={`profile__links ${isEdited && 'profile__links_is-edited'}`}>
         {!isEdited ? <button type='button' className='profile__link' onClick={handleEditClick}>Редактировать</button> : ''}
-        <button type='button' className='profile__link profile__link_type_logout'>Выйти из аккаунта</button>
+        <button type='button' className='profile__link profile__link_type_logout' onClick={handleClickButtonSignOut}>Выйти из аккаунта</button>
       </nav>
     </section >
   )

@@ -99,7 +99,9 @@
   font-weight: 500;
   height: 45px;
 }
-
+.form__button:hover {
+  opacity: 0.7;
+}
 .form__button:disabled {
   color: black;
   background-color: white;

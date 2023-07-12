@@ -2,9 +2,10 @@ import { useState } from 'react';
 import './MoviesCard.css';
 import LikeButton from '../LikeButton/LikeButton';
 import DeleteButton from '../DeleteButton/DeleteButton';
+import { Link } from 'react-router-dom';
 
 function MoviesCard ({ movie, handleClickDelete }) {
-  const { image, nameRU, duration, liked } = movie;
+  const { image, nameRU, duration, liked, link } = movie;
   const [isLiked, setIsliked] = useState(liked)
 
   function handleLikeButtonClick () {
@@ -18,7 +19,9 @@ function MoviesCard ({ movie, handleClickDelete }) {
     const formattedTime = `${hours}ч ${minutesRemainder}м`;
     return formattedTime;
   }
+  function handleClickMovieCard () {
 
+  }
   return (
     <li className='movies-card'>
       <div className='movies-card__content'>
@@ -30,7 +33,7 @@ function MoviesCard ({ movie, handleClickDelete }) {
           ? <DeleteButton handleClickDelete={() => handleClickDelete(movie)} />
           : <LikeButton isLiked={isLiked} handleLikeButtonClick={handleLikeButtonClick} />}
       </div>
-      <img src={image} alt={nameRU} className='movies-card__image' />
+      <Link to={link}><img src={image} alt={nameRU} className='movies-card__image' /></Link>
     </li>
   )
 }

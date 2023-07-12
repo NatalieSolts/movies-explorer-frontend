@@ -7,13 +7,17 @@
   display: grid;
   height: 49px;
   padding-top: 4px;
-  grid-template-columns: 310px auto;
-  column-gap: 10px;
+  grid-template-columns: 87.91% auto;
   justify-content: start;
+}
+@media screen and (max-width: 815px) {
+  .movies-card__content {
+    grid-template-columns: 87.02% auto;
+  }
 }
 @media screen and (max-width: 525px) {
   .movies-card__content {
-    grid-template-columns: 82% auto;
+    grid-template-columns: 85.33% auto;
   }
 }
 .movies-card__image {

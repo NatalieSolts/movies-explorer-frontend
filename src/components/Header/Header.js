@@ -1,5 +1,5 @@
 import './Header.css';
-import { Link, Route, Routes } from 'react-router-dom';
+import { Link, NavLink, Route, Routes } from 'react-router-dom';
 import Logo from '../Logo/Logo';
 import Navigation from '../Navigation/Navigation';
 
@@ -11,6 +11,15 @@ function Header (props) {
   function handleCloseMenu () {
     isMenuOpen(false)
   }
+  const setLinkClass = (navLink) =>
+    navLink.isActive
+      ? 'header__link header__link_medium'
+      : 'header__link';
+  const setLinkClassTypeAccount = (navLink) =>
+    navLink.isActive
+      ? 'header__link header__link_account header__link_medium'
+      : 'header__link header__link_account';
+
   return (
     <header className='header'>
       <Routes>
@@ -29,12 +38,12 @@ function Header (props) {
           <>
             <nav className='header__links header__links_hidden_mob'>
               <Logo />
-              <Link to="/movies" className='header__link'>Фильмы</Link>
-              <Link to="/saved-movies" className='header__link header__link_medium'>Сохранённые фильмы</Link>
+              <NavLink to="/movies" className={setLinkClass}>Фильмы</NavLink>
+              <NavLink to="/saved-movies" className={setLinkClass}>Сохранённые фильмы</NavLink>
             </nav>
             <nav className='header__links header__links_hidden_mob'>
-              <Link to="/profile" className='header__link header__link_account'>Аккаунт
-              </Link>
+              <NavLink to="/profile" className={setLinkClassTypeAccount}>Аккаунт
+              </NavLink>
             </nav>
             <nav className='header__links header__links_hidden_comp'>
               <Logo />
