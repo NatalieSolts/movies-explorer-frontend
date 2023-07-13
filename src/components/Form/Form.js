@@ -4,7 +4,7 @@ import { useState } from 'react';
 function Form ({
     name,
     onSubmit,
-    textForButtonForm,
+    txtBtnForm,
     onChange,
     children
 }) {
@@ -24,7 +24,7 @@ function Form ({
                 {children}
             </div>
             <button type="submit" form={name} className={`form__button`} disabled={!validForm}            >
-                {textForButtonForm}
+                {txtBtnForm}
             </button>
         </form>
     )

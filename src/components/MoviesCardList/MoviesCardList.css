@@ -11,7 +11,7 @@
 
 @media screen and (max-width: 815px) {
   .movies-card-list {
-    grid-column-gap: 26px;
+    grid-column-gap: 30px;
     grid-row-gap: 31px;
     padding: 0;
     grid-template-columns: 1fr 1fr;
@@ -37,7 +37,7 @@
   width: 320px;
   justify-content: center;
   display: flex;
-  font-family: var(--font-family);
+  font-family: 'Inter', sans-serif, Arial, Helvetica;
   font-style: normal;
   cursor: pointer;
   border: 1px solid #e8e8e8;
@@ -54,7 +54,7 @@
 @media screen and (max-width: 525px) {
   .movies-card-list-button {
     width: 240px;
-    margin-top: 74px;
+    margin-top: 76px;
     margin-bottom: -68px;
   }
 }

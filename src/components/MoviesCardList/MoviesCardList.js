@@ -20,7 +20,7 @@ function MoviesCardList ({ movies, isLoading, unwatchedFilms, remainingFilmsToVi
 
       {isLoading ? <Preloader /> : ""}
       {unwatchedFilms?.length ?
-        <button className='movies-card-list-button' onClick={remainingFilmsToView}        >
+        <button type='button' className='movies-card-list-button' onClick={remainingFilmsToView}        >
           Ещё
         </button> : ''}
     </Section>

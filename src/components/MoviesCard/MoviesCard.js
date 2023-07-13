@@ -13,7 +13,6 @@ function MoviesCard ({ movie, handleClickDelete }) {
   }
 
   function minutesLeft (min) {
-    console.log(min);
     const hours = Math.floor(min / 60);
     const minutesRemainder = min % 60;
     const formattedTime = `${hours}ч ${minutesRemainder}м`;
@@ -26,14 +25,14 @@ function MoviesCard ({ movie, handleClickDelete }) {
     <li className='movies-card'>
       <div className='movies-card__content'>
         <div className='movies-card__description'>
-          <h4 className='movies-card__title'>{nameRU}</h4>
+          <h2 className='movies-card__title'>{nameRU}</h2>
           <p className='movies-card__duration'>{minutesLeft(duration)}</p>
         </div>
         {handleClickDelete
           ? <DeleteButton handleClickDelete={() => handleClickDelete(movie)} />
           : <LikeButton isLiked={isLiked} handleLikeButtonClick={handleLikeButtonClick} />}
       </div>
-      <Link to={link}><img src={image} alt={nameRU} className='movies-card__image' /></Link>
+      <Link to={link} target='_blank'><img src={image} alt={nameRU} className='movies-card__image' /></Link>
     </li>
   )
 }

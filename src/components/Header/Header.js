@@ -1,15 +1,22 @@
 import './Header.css';
-import { Link, NavLink, Route, Routes } from 'react-router-dom';
+import { Link, NavLink, Route, Routes, useNavigate } from 'react-router-dom';
 import Logo from '../Logo/Logo';
 import Navigation from '../Navigation/Navigation';
 
 function Header (props) {
   const { menuOpened, isMenuOpen } = props;
+  const navigate = useNavigate();
   function handleClickMenu () {
     isMenuOpen(!menuOpened)
   }
   function handleCloseMenu () {
     isMenuOpen(false)
+  }
+  function handleClickRegister () {
+    navigate('/signup', { replace: true });
+  }
+  function handleClickLogin () {
+    navigate('/signin', { replace: true });
   }
   const setLinkClass = (navLink) =>
     navLink.isActive
@@ -28,8 +35,8 @@ function Header (props) {
           <>
             <Logo />
             <nav className='header__links'>
-              <Link to="/signup" className='header__link header__link_no-auth'>Регистрация</Link>
-              <Link to="/signin" className='header__link header__link_no-auth header__link_type_button'>Войти</Link>
+              <button type='button' onClick={handleClickRegister} to="/signup" className='header__link header__link_no-auth'>Регистрация</button>
+              <button type='button' onClick={handleClickLogin} to="/signin" className='header__link header__link_no-auth header__link_type_button'>Войти</button>
             </nav>
           </>
         } />
@@ -47,7 +54,7 @@ function Header (props) {
             </nav>
             <nav className='header__links header__links_hidden_comp'>
               <Logo />
-              <button className={`header__btn-menu ${menuOpened ? 'header__btn-menu_close' : ''}`} onClick={handleClickMenu}>
+              <button type='button' className={`header__btn-menu ${menuOpened ? 'header__btn-menu_close' : ''}`} onClick={handleClickMenu}>
               </button>
             </nav>
             <Navigation menuOpened={menuOpened} onClose={handleCloseMenu} />

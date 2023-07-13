@@ -39,6 +39,7 @@
     font-size: 40px;
     font-weight: 400;
     padding: 350px 0 314px 0;
+    letter-spacing: -1.6px;
   }
 }
 @media screen and (max-width: 525px) {
@@ -56,9 +57,16 @@
   display: flex;
   align-content: center;
 }
+.promo__nav-links {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  justify-content: center;
+  display: flex;
+  align-content: center;
+}
 .promo__link {
   margin: 0 5px 30px 5px;
-  padding: 10px auto 10px;
   transition: all 0.5s ease;
   align-items: center;
   line-height: 16px;
@@ -82,7 +90,6 @@
     border-radius: 6px;
     width: 82px;
     height: 26px;
-    padding: 5px auto;
   }
 }
 .promo__link:hover {

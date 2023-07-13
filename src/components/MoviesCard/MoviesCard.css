@@ -5,7 +5,7 @@
 .movies-card__content {
   padding-bottom: 16px;
   display: grid;
-  height: 49px;
+  height: 48px;
   padding-top: 4px;
   grid-template-columns: 87.91% auto;
   justify-content: start;
@@ -13,10 +13,12 @@
 @media screen and (max-width: 815px) {
   .movies-card__content {
     grid-template-columns: 87.02% auto;
+    height: 49px;
   }
 }
 @media screen and (max-width: 525px) {
   .movies-card__content {
+    height: 48px;
     grid-template-columns: 85.33% auto;
   }
 }

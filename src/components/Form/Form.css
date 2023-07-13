@@ -1,6 +1,6 @@
 .form {
   padding-top: 20px;
-  height: 380px;
+  min-height: 380px;
   display: flex;
   justify-content: space-between;
   flex-direction: column;
@@ -8,7 +8,7 @@
 }
 @media screen and (max-width: 525px) {
   .form {
-    height: 468px;
+    min-height: 468px;
     padding-top: 60px;
   }
 }
@@ -64,7 +64,7 @@
   line-height: 1.2;
   opacity: 0;
   margin: 0;
-  font-family: var(--main-font);
+  font-family: 'Inter', sans-serif, Arial, Helvetica;
   font-weight: 500;
   color: var(--red);
   font-size: 10px;
@@ -91,7 +91,7 @@
   color: white;
   margin-top: 20px;
   font-size: 14px;
-  font-family: var(--font-family);
+  font-family: 'Inter', sans-serif, Arial, Helvetica;
   background-color: black;
   width: 100%;
   transition: all 0.5s ease;

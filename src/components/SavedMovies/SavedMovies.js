@@ -19,11 +19,12 @@ const SavedMovies = () => {
     setMovies(prevFilms => prevFilms.filter(film => JSON.stringify(film) !== JSON.stringify(currentMovie)));
   }
   return (
-    <>
+    <main>
       <SearchForm />
       <MoviesCardList movies={movies} isLoading={isLoading} handleClickDelete={handleClickDelete} />
+      <div className='main__element-gap'></div>
       <Footer />
-    </>
+    </main>
   )
 }
 

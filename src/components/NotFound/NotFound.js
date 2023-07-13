@@ -7,11 +7,13 @@ function NotFound () {
         navigate(-1);
     }
     return (
-        <section className='notfound'>
-            <h1 className='notfound__title'>404</h1>
-            <p className='notfound__text'>Страница не найдена</p>
-            <button onClick={handleClick} className='notfound__link-back'>Назад</button>
-        </section >
+        <main>
+            <section className='notfound'>
+                <h1 className='notfound__title'>404</h1>
+                <p className='notfound__text'>Страница не найдена</p>
+                <button onClick={handleClick} className='notfound__link-back' type='button'>Назад</button>
+            </section >
+        </main>
     )
 }
 export default NotFound

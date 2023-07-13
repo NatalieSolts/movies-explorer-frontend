@@ -13,16 +13,16 @@ function Movies () {
     setIsLoading(true)
     setTimeout(() => {
       setIsLoading(false)
-      setMovies([...movies, ...unwatchedFilms.slice(0, 5)])
-    }, 1500)
+      setMovies([...movies, ...unwatchedFilms.slice(0, 12)])
+    }, 500)
   }
 
   return (
-    <>
+    <main>
       <SearchForm />
       <MoviesCardList movies={movies} isLoading={isLoading} unwatchedFilms={unwatchedFilms} remainingFilmsToView={remainingFilmsToView} />
       <Footer />
-    </>
+    </main>
   )
 }
 

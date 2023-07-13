@@ -7,7 +7,7 @@
   font-weight: 400;
   font-size: 14px;
   border-bottom: 1px solid #e8e8e8;
-  font-family: var(--font-family);
+  font-family: 'Inter', sans-serif, Arial, Helvetica;
   line-height: 17px;
 }
 

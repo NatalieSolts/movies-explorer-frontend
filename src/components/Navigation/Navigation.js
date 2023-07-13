@@ -20,17 +20,17 @@ function Navigation ({ menuOpened, onClose }) {
     <div className={`navigation ${menuOpened ? 'navigation_displayed' : ''}`} onClick={handleClickCloseByOverlay} >
       <nav className={`navigation__inner ${menuOpened ? 'navigation__inner_displayed' : ''}`}>
         <ul className='navigation__links'>
-          <li className='navigation__link navigation__links-item_type_only-mobile'>
+          <li>
             <NavLink className={getNavLinkClassName} to='/' onClick={onClose}>
               Главная
             </NavLink>
           </li>
-          <li className='navigation__link'>
+          <li>
             <NavLink className={getNavLinkClassName} to='/movies' onClick={onClose}>
               Фильмы
             </NavLink>
           </li>
-          <li className='navigation__link'>
+          <li>
             <NavLink className={getNavLinkClassName} to='/saved-movies' onClick={onClose}>
               Сохранённые фильмы
             </NavLink>

@@ -1,7 +1,7 @@
 .header {
   width: 100%;
   justify-content: space-between;
-  height: 74px;
+  min-height: 74px;
   position: relative;
   box-sizing: border-box;
   align-items: center;
