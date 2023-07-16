@@ -5,7 +5,7 @@ import Input from '../Input/Input';
 import Section from '../Section/Section';
 import { Link } from 'react-router-dom';
 
-function Login () {
+function Login ({ onSubmit }) {
   const [values, setValues] = useState({})
 
   const handleChange = (event) => {
@@ -15,14 +15,16 @@ function Login () {
       [name]: value
     }));
   };
-
+  function handleSubmit () {
+    onSubmit(values.email, values.password)
+  }
   return (
     <main>
       <Section type='auth'>
         <Logo />
         <h1 className='section__title'>Рады видеть!</h1>
-        <Form name='login' txtBtnForm='Войти' onChange={handleChange}      >
-          <Input label='E-mail' type='email' name='email' defaultValue='pochta@yandex.ru' required={true} minLength={8} maxLength={30} />
+        <Form name='login' txtBtnForm='Войти' onChange={handleChange} onSubmit={handleSubmit}    >
+          <Input label='E-mail' type='email' name='email' required={true} minLength={8} maxLength={30} />
           <Input label='Пароль' type='password' name='password' required={true} minLength={6} maxLength={30} />
         </Form>
         <p className='section__text'>Ещё не зарегистрированы?<Link className="section__link" to="/signup">Регистрация</Link></p>

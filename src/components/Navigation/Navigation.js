@@ -1,5 +1,6 @@
 import { NavLink, Link } from 'react-router-dom';
 import './Navigation.css';
+import { useEffect } from 'react';
 
 function Navigation ({ menuOpened, onClose }) {
 
@@ -15,7 +16,14 @@ function Navigation ({ menuOpened, onClose }) {
       onClose();
     }
   };
+  useEffect(() => {
+    function handleKeyEsc (e) {
+      e.key === 'Escape' && onClose();
+    }
+    menuOpened && document.addEventListener('keydown', handleKeyEsc);
 
+    return () => document.removeEventListener('keydown', handleKeyEsc);
+  }, [menuOpened]);
   return (
     <div className={`navigation ${menuOpened ? 'navigation_displayed' : ''}`} onClick={handleClickCloseByOverlay} >
       <nav className={`navigation__inner ${menuOpened ? 'navigation__inner_displayed' : ''}`}>

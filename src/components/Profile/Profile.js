@@ -1,22 +1,31 @@
 import { useNavigate } from 'react-router-dom';
 import './Profile.css';
-import { useRef, useState } from 'react';
+import { useContext, useEffect, useRef, useState } from 'react';
+import { CurrentUserContext } from '../../contexts/CurrentUserContext';
 
-const Profile = () => {
-  const [values, setValues] = useState({ name: 'Виталий', email: 'email@yandex.ru' });
+const Profile = ({ onEditProfile, isLoading }) => {
   const [isEdited, setIsEdited] = useState(false);
   const [isDisabledStateBtn, setIsDisabledStateBtn] = useState(true)
   const navigate = useNavigate();
+  const currentUser = useContext(CurrentUserContext);
+  const [values, setValues] = useState(currentUser ? { 'profile-name': currentUser.name, 'profile-email': currentUser.email } : {});
 
   function handleChange (event) {
-    const profileNameInputValue = event.target.form['profile-name'].value;
-    const profileEmailInputValue = event.target.form['profile-email'].value;
+    const profileNameInput = event.target.form['profile-name'];
+    const profileEmailInput = event.target.form['profile-email'];
+    setValues({ ...values, [event.target.name]: event.target.value });
 
-    if (profileNameInputValue !== values.name || profileEmailInputValue !== values.email) {
-      setIsDisabledStateBtn(false);
-    } else {
-      setIsDisabledStateBtn(true);
+    if (profileNameInput.value !== currentUser.name || profileEmailInput.value !== currentUser.email) {
+      if (profileNameInput.validity.valid && profileEmailInput.validity.valid) {
+        setIsDisabledStateBtn(false);
+        return;
+      }
     }
+    setIsDisabledStateBtn(true);
+  }
+  function handleSubmit (event) {
+    event.preventDefault();
+    onEditProfile(values['profile-email'], values['profile-name'])
   }
   function handleCloseEditForm () {
     setIsEdited(false);
@@ -27,18 +36,25 @@ const Profile = () => {
   function handleClickButtonSignOut () {
     navigate("/");
   }
+
+  useEffect(() => {
+    const { name, email } = currentUser;
+    setValues({ 'profile-name': name, 'profile-email': email });
+  }, [currentUser]);
+
   return (
     <main>
       <section className='profile'>
-        <h1 className='profile__title'>Привет, Виталий!</h1>
-        <form className='profile__form' name='profile__form' onChange={handleChange}      >
+        <h1 className='profile__title'>Привет, {values['profile-name']}!</h1>
+        <form className='profile__form' name='profile__form' onChange={handleChange} onSubmit={handleSubmit}     >
           <label className="profile__text">
             Имя
-            <input className='profile__form-input' type='text' name='profile-name' required minLength={2} maxLength={30} id='profile-name' placeholder='Имя' disabled={!isEdited} defaultValue={values.name} />
+            <input className='profile__form-input' type='text' name='profile-name' required minLength={2} maxLength={30} id='profile-name' placeholder='Имя' disabled={!isEdited} value={values['profile-name']}
+            />
           </label>
           <label className="profile__text">
             E-mail
-            <input className='profile__form-input' type='email' name='profile-email' required minLength={2} maxLength={30} id='profile-email' placeholder='E-mail' disabled={!isEdited} defaultValue={values.email} />
+            <input className='profile__form-input' type='email' name='profile-email' required minLength={2} maxLength={30} id='profile-email' placeholder='E-mail' disabled={!isEdited} pattern="^[\w\-\.]+@([\w\-]+\.)+[\w\-]{2,4}$" value={values['profile-email']} />
           </label>
 
           {isEdited ?

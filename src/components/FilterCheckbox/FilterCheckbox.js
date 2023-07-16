@@ -1,11 +1,19 @@
 import './FilterCheckbox.css';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
-function FilterCheckbox () {
-  const [isToggle, setIsToggle] = useState(true)
-  function handleChange () {
-    setIsToggle(!isToggle)
+function FilterCheckbox ({ onFilterMovies, setIsChecked }) {
+  const [isToggle, setIsToggle] = useState(null)
+  const isCheckedInLS = localStorage.getItem('filterCheckbox');
+  function handleChange (event) {
+    const isChecked = event.target.checked;
+    localStorage.setItem('filterCheckbox', isChecked);
+    setIsChecked(isChecked);
+    setIsToggle(isChecked)
   }
+  useEffect(() => {
+    setIsChecked(isCheckedInLS === 'true');
+    setIsToggle(isCheckedInLS === 'true');
+  }, [])
   return (
     <div className='filter-checkbox'>
       <label className='filter-checkbox__label-toggle' htmlFor='short-movies'>
@@ -14,7 +22,7 @@ function FilterCheckbox () {
           type='checkbox'
           name='short-movies'
           id='short-movies'
-          checked={isToggle}
+          defaultChecked={isCheckedInLS === 'true'}
           onChange={handleChange}
         />
         <span className={`filter-checkbox__toggle-checkbox-visible ${isToggle && 'filter-checkbox__toggle-checkbox-visible_checked'}`} />

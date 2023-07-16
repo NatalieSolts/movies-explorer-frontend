@@ -4,23 +4,25 @@ import MoviesCardList from '../MoviesCardList/MoviesCardList';
 import Footer from '../Footer/Footer';
 import { initialFilmList } from '../../utils/initialFilmList';
 
-function Movies () {
+function Movies ({
+  onFilterMovies,
+  moviesList,
+  savedMoviesList,
+  isLoading,
+  setIsChecked,
+  setSearch,
+}) {
   const [movies, setMovies] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
-  const unwatchedFilms = initialFilmList.slice(movies.length);
+  const unwatchedFilms = moviesList.slice(movies.length);
 
   function remainingFilmsToView () {
-    setIsLoading(true)
-    setTimeout(() => {
-      setIsLoading(false)
-      setMovies([...movies, ...unwatchedFilms.slice(0, 12)])
-    }, 500)
+    setMovies([...moviesList, ...unwatchedFilms.slice(0, 12)])
   }
 
   return (
     <main>
-      <SearchForm />
-      <MoviesCardList movies={movies} isLoading={isLoading} unwatchedFilms={unwatchedFilms} remainingFilmsToView={remainingFilmsToView} />
+      <SearchForm isLoading={isLoading} onFilterMovies={onFilterMovies} setIsChecked={setIsChecked} setSearch={setSearch} />
+      <MoviesCardList movies={moviesList} isLoading={isLoading} unwatchedFilms={unwatchedFilms} remainingFilmsToView={remainingFilmsToView} />
       <Footer />
     </main>
   )

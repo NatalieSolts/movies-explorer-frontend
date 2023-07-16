@@ -1,5 +1,5 @@
 import './Form.css';
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 
 function Form ({
     name,
@@ -9,17 +9,22 @@ function Form ({
     children
 }) {
     const [validForm, setValidForm] = useState(true);
+    const ref = useRef(null);
     function handleChange (event) {
-        event.preventDefault();
-        setValidForm(event.target.validity.valid)
-        onChange(event)
+        const isValidForm = ref.current.elements.length
+            ? [...ref.current.elements].some(
+                (element) => element.validity.valid === false
+            )
+            : false;
+        setValidForm(!isValidForm);
+        onChange(event);
     }
     function handleSubmit (event) {
         event.preventDefault();
         onSubmit(event)
     }
     return (
-        <form onSubmit={handleSubmit} onChange={handleChange} name={name} id={name} action="#" className={`form form_type_${name}`} noValidate        >
+        <form onSubmit={handleSubmit} onChange={handleChange} name={name} id={name} className={`form form_type_${name}`} noValidate ref={ref} >
             <div>
                 {children}
             </div>
