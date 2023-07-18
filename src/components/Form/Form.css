@@ -1,0 +1,140 @@
+.form {
+  padding-top: 20px;
+  min-height: 380px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  width: 100%;
+}
+@media screen and (max-width: 525px) {
+  .form {
+    min-height: 468px;
+    padding-top: 60px;
+  }
+}
+
+.form_type_edit-profile {
+  padding-top: 83px;
+}
+
+.form__input-wrapper_type_edit-profile {
+  line-height: 1.18;
+  font-size: 11px;
+  padding-bottom: 15px;
+  color: var(--white);
+  border-bottom: 1px solid var(--divider-bg-color-dark-grey);
+  align-items: center;
+  padding-top: 17px;
+  flex-direction: row;
+  font-weight: 500;
+}
+
+.form__input-wrapper_type_edit-profile:last-of-type {
+  border-bottom: none;
+}
+
+.form__input_type_edit-profile {
+  padding-bottom: 0;
+  width: 350px;
+  padding-top: 0;
+  border-bottom-color: transparent;
+  font-size: 11px;
+  text-align: right;
+  line-height: 1.18;
+  font-weight: 400;
+}
+
+.form__input:focus-visible {
+  border-bottom: 1px solid var(--blue);
+}
+
+.form__errors-wrapper {
+  gap: 10px;
+  margin-top: 32px;
+  display: flex;
+  opacity: 0;
+  flex-direction: column;
+}
+
+.form__errors-wrapper_active {
+  opacity: 1;
+}
+
+.form__error-name {
+  line-height: 1.2;
+  opacity: 0;
+  margin: 0;
+  font-family: 'Inter', sans-serif, Arial, Helvetica;
+  font-weight: 500;
+  color: var(--red);
+  font-size: 10px;
+}
+
+.form__error-name_active {
+  opacity: 1;
+}
+
+.form__input-error_type_edit-profile {
+  margin-bottom: 2px;
+  margin-top: 2px;
+}
+
+.form__input-error_active {
+  opacity: 1;
+}
+
+.form__button {
+  padding: 0;
+  cursor: pointer;
+  border-radius: 3px;
+  border: none;
+  color: white;
+  margin-top: 20px;
+  font-size: 14px;
+  font-family: 'Inter', sans-serif, Arial, Helvetica;
+  background-color: black;
+  width: 100%;
+  transition: all 0.5s ease;
+  line-height: 17px;
+  font-weight: 500;
+  height: 45px;
+}
+.form__button:hover {
+  opacity: 0.7;
+}
+.form__button:disabled {
+  color: black;
+  background-color: white;
+  cursor: default;
+  opacity: 0.5;
+  border: 1px solid #a0a0a0;
+}
+
+.form__btn-submit_hidden {
+  display: none;
+}
+
+@media screen and (max-width: 990px) {
+  .form_type_edit-profile {
+    padding-top: 56px;
+  }
+
+  .form__errors-wrapper {
+    margin-top: 20px;
+  }
+}
+
+@media screen and (max-width: 620px) {
+  .form_type_edit-profile {
+    padding-top: 0;
+  }
+
+  .form__input_type_edit-profile {
+    width: 200px;
+  }
+
+  .form__button {
+    line-height: 1.25;
+    font-size: 12px;
+  }
+}

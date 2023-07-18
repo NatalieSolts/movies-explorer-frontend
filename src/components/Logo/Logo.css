@@ -1,0 +1,19 @@
+.logo {
+  background-color: black;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  margin-right: 44px;
+  display: flex;
+}
+@media screen and (max-width: 525px) {
+  .logo {
+    margin: 0;
+  }
+}
+.logo__img {
+  height: 100%;
+  width: 100%;
+}
