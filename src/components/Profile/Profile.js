@@ -3,7 +3,7 @@ import './Profile.css';
 import { useContext, useEffect, useRef, useState } from 'react';
 import { CurrentUserContext } from '../../contexts/CurrentUserContext';
 
-const Profile = ({ onEditProfile, isLoading }) => {
+const Profile = ({ onEditProfile, isLoading, onSignOut }) => {
   const [isEdited, setIsEdited] = useState(false);
   const [isDisabledStateBtn, setIsDisabledStateBtn] = useState(true)
   const navigate = useNavigate();
@@ -23,18 +23,22 @@ const Profile = ({ onEditProfile, isLoading }) => {
     }
     setIsDisabledStateBtn(true);
   }
+
   function handleSubmit (event) {
     event.preventDefault();
     onEditProfile(values['profile-email'], values['profile-name'])
   }
+
   function handleCloseEditForm () {
     setIsEdited(false);
   }
+
   function handleEditClick () {
     setIsEdited(true);
   }
+
   function handleClickButtonSignOut () {
-    navigate("/");
+    onSignOut();
   }
 
   useEffect(() => {

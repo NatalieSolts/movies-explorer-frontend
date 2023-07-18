@@ -1,3 +1,5 @@
+export const urlServer = 'https://api.nomoreparties.co/';
+const pathUrl = 'beatfilm-movies';
 class MoviesApi {
   constructor(options) {
     this._server = options.urlServer;
@@ -27,5 +29,5 @@ class MoviesApi {
 
 export const allMoviesApi =
   new MoviesApi({
-    urlServer: 'https://api.nomoreparties.co/beatfilm-movies',
+    urlServer: urlServer + pathUrl,
   });

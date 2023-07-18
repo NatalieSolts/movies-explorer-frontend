@@ -43,7 +43,7 @@ const Register = ({ onRegister, loggedIn }) => {
           <Input type='text' name='name' required={true} label='Имя' maxLength={30} minLength={6}
           />
           <Input type='email' name='email' required={true} minLength={6} maxLength={30} label='E-mail' pattern="^[\w\-\.]+@([\w\-]+\.)+[\w\-]{2,4}$" autoFocus={true} />
-          <Input label='Пароль' type='password' name='password' required={true} defaultError={true} minLength={6} maxLength={30} />
+          <Input label='Пароль' type='password' name='password' required={true} minLength={6} maxLength={30} />
         </Form>
         <p className='section__text'>Уже зарегистрированы?<Link className="section__link" to="/signin">Войти</Link></p>
       </Section>

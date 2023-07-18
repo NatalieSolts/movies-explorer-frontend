@@ -2,24 +2,38 @@ import { useState } from 'react';
 import './MoviesCard.css';
 import LikeButton from '../LikeButton/LikeButton';
 import DeleteButton from '../DeleteButton/DeleteButton';
-import { Link } from 'react-router-dom';
+import { urlServer } from '../../utils/MoviesApi';
 
-function MoviesCard ({ movie, handleClickDelete }) {
-  const { image, nameRU, duration, liked, link } = movie;
-  const [isLiked, setIsliked] = useState(liked)
+function MoviesCard ({
+  movie,
+  liked,
+  onLike,
+  onDislike
+}) {
+  const { image, nameRU, duration, trailerLink } = movie;
+  const imageUrl = image.length ? image : `${urlServer}${image.url}`;
+  const id = movie.movieId
+    ? movie.movieId
+    : movie.id;
 
   function handleLikeButtonClick () {
-    setIsliked(!isLiked)
+    onLike(movie)
+  }
+  function handleDislikeButtonClick () {
+    onDislike(id)
   }
 
+  // переводим минуты в ч:мин
   function minutesLeft (min) {
     const hours = Math.floor(min / 60);
     const minutesRemainder = min % 60;
     const formattedTime = `${hours}ч ${minutesRemainder}м`;
     return formattedTime;
   }
-  function handleClickMovieCard () {
 
+  // переход по ссылке на трейлер
+  function handleClickMovieCard () {
+    window.open(trailerLink, '_blank');
   }
   return (
     <li className='movies-card'>
@@ -28,11 +42,11 @@ function MoviesCard ({ movie, handleClickDelete }) {
           <h2 className='movies-card__title'>{nameRU}</h2>
           <p className='movies-card__duration'>{minutesLeft(duration)}</p>
         </div>
-        {handleClickDelete
-          ? <DeleteButton handleClickDelete={() => handleClickDelete(movie)} />
-          : <LikeButton isLiked={isLiked} handleLikeButtonClick={handleLikeButtonClick} />}
+        {onLike
+          ? <LikeButton isLiked={liked} onLike={handleLikeButtonClick} onDislike={handleDislikeButtonClick} />
+          : <DeleteButton onDislike={handleDislikeButtonClick} />}
       </div>
-      <Link to={link} target='_blank'><img src={image} alt={nameRU} className='movies-card__image' /></Link>
+      <img src={imageUrl} alt={nameRU} className='movies-card__image' onClick={handleClickMovieCard} />
     </li>
   )
 }

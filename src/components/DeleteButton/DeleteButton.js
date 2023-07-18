@@ -1,8 +1,8 @@
 import './DeleteButton.css';
-function DeleteButton ({ handleClickDelete }) {
+function DeleteButton ({ onDislike }) {
     return (
         <button
-            onClick={handleClickDelete}
+            onClick={onDislike}
             type='button'
             className='delete-button'
         >&#215;</button>

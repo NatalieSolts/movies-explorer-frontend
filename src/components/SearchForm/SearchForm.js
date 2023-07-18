@@ -3,7 +3,7 @@ import Section from '../Section/Section';
 import FilterCheckbox from '../FilterCheckbox/FilterCheckbox';
 import { useState } from 'react';
 
-const SearchForm = ({ onFilterMovies, setIsChecked, setSearch, isLoading }) => {
+const SearchForm = ({ setIsChecked, setSearch, isLoading, isSaveValuesInLocalStorage }) => {
   const [isValid, setIsValid] = useState(false);
   function handleChange (event) {
     setIsValid(event.target.validity.valid);
@@ -18,9 +18,9 @@ const SearchForm = ({ onFilterMovies, setIsChecked, setSearch, isLoading }) => {
   return (
     <Section type="small" >
       <form onChange={handleChange} onSubmit={handleSubmit} className='search-form'>
-        <input name="search" id="search" type="text" required={true} className='search-form__input' placeholder="Фильм" defaultValue={localStorage.getItem('search') || ''} />
+        <input name="search" id="search" type="text" required={true} className='search-form__input' placeholder="Фильм" defaultValue={isSaveValuesInLocalStorage ? localStorage.getItem('search') || '' : ''} />
         <button className="search-form__submit" type="submit" disabled={isLoading ? true : !isValid}></button>
-        <FilterCheckbox onFilterMovies={onFilterMovies} setIsChecked={setIsChecked} />
+        <FilterCheckbox setIsChecked={setIsChecked} isSaveValuesInLocalStorage={isSaveValuesInLocalStorage} />
       </form>
     </Section>
   )

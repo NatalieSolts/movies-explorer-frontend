@@ -4,17 +4,31 @@ import MoviesCard from '../MoviesCard/MoviesCard';
 import Preloader from '../Preloader/Preloader';
 import { useEffect, useState } from 'react';
 
-function MoviesCardList ({ movies, isLoading, unwatchedFilms, remainingFilmsToView, handleClickDelete }) {
+function MoviesCardList ({ movies, isLoading, unwatchedFilms, remainingFilmsToView, savedMoviesList, onLike, onDislike }) {
+  const [arrayIdSavedMovies, setArrayIdSavedMovies] = useState([])
+  useEffect(() => {
+    const newArray = savedMoviesList.map((movie) => movie.movieId);
+    setArrayIdSavedMovies(newArray)
+  }, [savedMoviesList])
 
   useEffect(() => {
     remainingFilmsToView && remainingFilmsToView()
   }, [])
-
   return (
     <Section type="movies" >
       {movies.length ? (
         <ul className='movies-card-list'>
-          {movies.map((movie, index) => <MoviesCard movie={movie} key={index} handleClickDelete={handleClickDelete} />)}
+          {movies.map((movie) => {
+
+            return (<MoviesCard
+              movie={movie}
+              key={movie.id ?
+                movie.id : movie._id}
+              onDislike={onDislike}
+              onLike={onLike}
+              liked={arrayIdSavedMovies.includes(movie.id)}
+            />)
+          })}
         </ul>
       ) : !isLoading ? <h3 className='movies-card-list__title'>Список фильмов пуст</h3> : ''}
 
