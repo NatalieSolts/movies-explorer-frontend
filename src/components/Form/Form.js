@@ -8,7 +8,7 @@ function Form ({
     onChange,
     children
 }) {
-    const [validForm, setValidForm] = useState(true);
+    const [validForm, setValidForm] = useState(false);
     const ref = useRef(null);
     function handleChange (event) {
         const isValidForm = ref.current.elements.length

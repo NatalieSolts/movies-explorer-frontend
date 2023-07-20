@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import './Input.css';
-function Input ({ defaultError = false, autoFocus = false, type, name, required, minLength, maxLength, label, defaultValue, autoComplete }) {
+function Input ({ defaultError = false, autoFocus = false, type, name, required, minLength, maxLength, label, defaultValue, autoComplete, pattern }) {
     const [error, setError] = useState(false)
     function handleChange (event) {
         !event.target.validity.valid
@@ -10,11 +10,24 @@ function Input ({ defaultError = false, autoFocus = false, type, name, required,
     return (
         <label className="label">
             {label}
-            <input className={`input ${autoFocus ? " input_focus " : ""} ${defaultError ? " input_error " : ""} `} type={type} id={name} name={name} required={required} autoFocus={autoFocus} onChange={handleChange} placeholder={label} defaultValue={defaultValue || ""} maxLength={maxLength} minLength={minLength} autoComplete={autoComplete}
+            <input
+                className={`input ${autoFocus ? " input_focus " : ""} ${defaultError ? " input_error " : ""} `}
+                type={type}
+                id={name}
+                name={name}
+                required={required}
+                autoFocus={autoFocus}
+                onChange={handleChange}
+                placeholder={label}
+                defaultValue={defaultValue || ""}
+                maxLength={maxLength}
+                minLength={minLength}
+                autoComplete={autoComplete}
+                pattern={pattern ? pattern : ".*"}
             />
             <span
                 className={`label__error ${error || defaultError ? 'label__error_active' : ''}`}
-            >Что-то пошло не так...
+            >{error ? error : 'Что-то пошло не так...'}
             </span>
         </label>
     )
