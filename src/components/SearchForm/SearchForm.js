@@ -12,7 +12,6 @@ const SearchForm = ({ setIsChecked, setSearch, isLoading, isSaveValuesInLocalSto
     event.preventDefault();
     const searchText = event.target.elements['search'].value;
     setSearch(searchText);
-    localStorage.setItem('search', searchText);
   }
 
   return (

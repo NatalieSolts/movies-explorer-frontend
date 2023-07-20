@@ -35,8 +35,8 @@ function App () {
   const [moviesList, setMoviesList] = useState([]); // список всех фильмов
   const [savedMoviesList, setSavedMoviesList] = useState([]); // массив сохраненных фильмов
   const [filteredSavedMoviesList, setFilteredSavedMoviesList] = useState([]); // массив сохранненых отфильтрованных фильмов
-  const [isCheckedFilterBoxMovies, setIsCheckedFilterBoxMovies] = useState(null); // статус кнопки "короткометражки" для всех фильмов
-  const [searchTextMovies, setSearchTextMovies] = useState(null); // текст запроса формы поиска среди всех фильмов
+  const [isCheckedFilterBoxMovies, setIsCheckedFilterBoxMovies] = useState(localStorage.getItem('filterCheckbox') ? localStorage.getItem('filterCheckbox') === 'true' : false); // статус кнопки "короткометражки" для всех фильмов
+  const [searchTextMovies, setSearchTextMovies] = useState(localStorage.getItem('search') ? localStorage.getItem('search') : ''); // текст запроса формы поиска среди всех фильмов
   const [isCheckedFilterBoxSavedMovies, setIsCheckedFilterBoxSavedMovies] = useState(null); // статус кнопки "короткометражки" для сохраненных фильмов
   const [searchTextSavedMovies, setSearchTextSavedMovies] = useState(null); // текст запроса формы поиска среди сохраненных фильмов
 
@@ -92,6 +92,8 @@ function App () {
   }
   // выход из аккаунта
   function handleSignOut () {
+    setIsCheckedFilterBoxMovies(false)
+    setSearchTextMovies('')
     localStorage.clear();
     setLoggedIn(false);
     setStatusCompleted(`Вы успешно вышли!`);
@@ -162,12 +164,7 @@ function App () {
 
   // загрузка основного массива фильмов (из хранилища если есть)
   const getMoviesData = async () => {
-    const userRequest = searchTextMovies ? searchTextMovies : localStorage.getItem('search');
-    const isCheckedLS = localStorage.getItem('filterCheckbox')
-      ? localStorage.getItem('filterCheckbox') === 'true'
-      : null;
-    const isCheckedFilterBox = isCheckedFilterBoxMovies === isCheckedLS ? isCheckedFilterBoxMovies : isCheckedLS;
-    if (!userRequest) {
+    if (!searchTextMovies) {
       setMoviesList([]);
       return;
     }
@@ -176,7 +173,8 @@ function App () {
       const moviesInLS = localStorage.getItem('movies');
       const moviesData = moviesInLS ? JSON.parse(moviesInLS) : await allMoviesApi.getAllMovies();
       localStorage.setItem('movies', JSON.stringify(moviesData));
-      const newMoviesList = filterMoviesList(moviesData, userRequest, isCheckedFilterBox);
+
+      const newMoviesList = filterMoviesList(moviesData, searchTextMovies, isCheckedFilterBoxMovies);
       setMoviesList(newMoviesList);
     } catch (err) {
       console.log(err);
@@ -204,6 +202,9 @@ function App () {
   useEffect(() => {
     if (loggedIn) {
       getMoviesData();
+      searchTextMovies && localStorage.setItem('search', searchTextMovies);
+      localStorage.setItem('filterCheckbox', isCheckedFilterBoxMovies);
+      console.log(isCheckedFilterBoxMovies, searchTextMovies);
     }
   }, [isCheckedFilterBoxMovies, searchTextMovies]);
 

@@ -6,7 +6,6 @@ function FilterCheckbox ({ setIsChecked, isSaveValuesInLocalStorage }) {
   const isCheckedInLS = localStorage.getItem('filterCheckbox');
   function handleChange (event) {
     const isChecked = event.target.checked;
-    isSaveValuesInLocalStorage && localStorage.setItem('filterCheckbox', isChecked);
     setIsChecked(isChecked);
     setIsToggle(isChecked)
   }
