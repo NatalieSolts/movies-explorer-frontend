@@ -1,0 +1,24 @@
+.like-button {
+  justify-content: center;
+  transition: all 0.5s ease;
+  align-items: center;
+  height: 30px;
+  justify-self: end;
+  cursor: pointer;
+  border: none;
+  width: 30px;
+  display: flex;
+  border-radius: 36px;
+  background-image: url('../../images/icon-dislike.svg');
+  background-position: center;
+  background-repeat: no-repeat;
+  margin-top: 16px;
+}
+
+.like-button_active {
+  background-image: url('../../images/icon-like.svg');
+}
+.like-button:hover {
+  transform: translateY(2px);
+  animation: all 0.5s ease;
+}

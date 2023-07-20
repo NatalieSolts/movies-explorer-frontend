@@ -1,0 +1,147 @@
+.about-me {
+  justify-content: center;
+  display: flex;
+  align-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.about-me__table {
+  width: 100%;
+  display: flex;
+  padding: 66px 0 0;
+  justify-content: space-between;
+}
+@media screen and (max-width: 525px) {
+  .about-me__table {
+    padding-top: 59px;
+    flex-direction: column-reverse;
+  }
+}
+.about-me__info {
+  display: flex;
+  max-width: 600px;
+  flex-direction: column;
+}
+@media screen and (max-width: 815px) {
+  .about-me__info {
+    padding-right: 50px;
+  }
+}
+@media screen and (max-width: 525px) {
+  .about-me__info {
+    padding-right: 0;
+    padding-top: 40px;
+  }
+}
+
+.about-me__name {
+  font-weight: 400;
+  padding: 0;
+  font-size: 50px;
+  font-style: normal;
+  margin: 0;
+  line-height: 58px;
+  letter-spacing: -2px;
+}
+@media screen and (max-width: 815px) {
+  .about-me__name {
+    font-size: 40px;
+    line-height: 40px;
+  }
+}
+@media screen and (max-width: 525px) {
+  .about-me__name {
+    line-height: 36px;
+    font-size: 30px;
+  }
+}
+.about-me__profession {
+  line-height: 20px;
+  margin: 0;
+  font-style: normal;
+  font-weight: 500;
+  padding: 18px 0 0;
+  font-size: 18px;
+}
+@media screen and (max-width: 815px) {
+  .about-me__profession {
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 18px;
+    padding: 16px 0 0;
+  }
+}
+@media screen and (max-width: 525px) {
+  .about-me__profession {
+    padding: 20px 0 0;
+    font-size: 11px;
+    line-height: 16px;
+  }
+}
+.about-me__text {
+  margin: 0;
+  font-size: 14px;
+  font-style: normal;
+  padding: 26px 0 0;
+  font-weight: 400;
+  line-height: 22px;
+}
+@media screen and (max-width: 815px) {
+  .about-me__text {
+    font-size: 12px;
+    line-height: 18px;
+    font-weight: 400;
+    padding: 20px 0 0;
+  }
+}
+@media screen and (max-width: 525px) {
+  .about-me__text {
+    font-weight: 400;
+    line-height: 16px;
+    font-size: 11px;
+  }
+}
+.about-me__link {
+  transition: 0.5s ease;
+  padding: 99px 0 0;
+  font-size: 14px;
+  font-style: normal;
+  margin: 0;
+  line-height: 17px;
+  color: black;
+  font-weight: 500;
+  text-decoration: none;
+}
+.about-me__link:hover {
+  opacity: 0.5;
+}
+@media screen and (max-width: 815px) {
+  .about-me__link {
+    padding: 87px 0 0;
+  }
+}
+@media screen and (max-width: 525px) {
+  .about-me__link {
+    padding: 40px 0 0;
+  }
+}
+.about-me__image {
+  object-fit: cover;
+  border-radius: 10px;
+  height: 327px;
+  width: 270px;
+}
+@media screen and (max-width: 815px) {
+  .about-me__image {
+    max-width: 255px;
+    max-height: 307px;
+  }
+}
+@media screen and (max-width: 525px) {
+  .about-me__image {
+    height: 353px;
+    width: 100%;
+    max-height: none;
+    max-width: none;
+  }
+}

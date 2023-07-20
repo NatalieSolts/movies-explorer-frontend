@@ -1,0 +1,128 @@
+.techs {
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+.techs__title {
+  margin: 0;
+  padding: 0;
+  font-weight: 400;
+  max-width: 460px;
+  font-size: 50px;
+  font-style: normal;
+  line-height: 58px;
+  padding-top: 90px;
+  letter-spacing: -2px;
+}
+@media screen and (max-width: 815px) {
+  .techs__title {
+    padding-top: 80px;
+  }
+}
+@media screen and (max-width: 525px) {
+  .techs__title {
+    line-height: 36px;
+    font-weight: 400;
+    padding-top: 60px;
+    letter-spacing: -1.2px;
+    font-size: 30px;
+  }
+}
+
+.techs__subtitle {
+  margin: 0;
+  padding: 26px 0 0;
+  text-align: center;
+  font-weight: 400;
+  line-height: 20px;
+  max-width: 460px;
+  font-style: normal;
+  font-size: 14px;
+  letter-spacing: -0.56px;
+}
+@media screen and (max-width: 815px) {
+  .techs__subtitle {
+    padding: 22px 0 0;
+    font-weight: 400;
+    line-height: 18px;
+    text-align: center;
+    font-size: 12px;
+  }
+}
+@media screen and (max-width: 525px) {
+  .techs__subtitle {
+    line-height: 16px;
+    font-weight: 400;
+    font-size: 11px;
+    padding: 24px 0 0;
+  }
+}
+.techs__list {
+  padding: 100px 0 0;
+  margin: 0;
+  list-style: none;
+  display: flex;
+}
+@media screen and (max-width: 815px) {
+  .techs__list {
+    padding: 83px 0 0;
+  }
+}
+@media screen and (max-width: 740px) and (min-width: 526px) {
+  .techs__list {
+    gap: 10px;
+    padding: 83px 0 0;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+@media screen and (max-width: 525px) {
+  .techs__list {
+    grid-template-columns: 1fr 1fr;
+    display: grid;
+    padding: 50px 0 0;
+    gap: 10px;
+  }
+}
+
+.techs__item {
+  padding: 21px 0 22px;
+  margin: 0 5px 0 5px;
+  background-color: #e8e8e8;
+  width: 90px;
+  border-radius: 10px;
+}
+@media screen and (max-width: 815px) {
+  .techs__item {
+    width: 84px;
+  }
+}
+@media screen and (max-width: 525px) {
+  .techs__item {
+    margin: 0;
+    padding: 21px 0;
+  }
+}
+.techs__list-text {
+  font-weight: 400;
+  margin: 0;
+  text-align: center;
+  line-height: 17px;
+  font-size: 14px;
+  padding: 0;
+  font-style: normal;
+}
+@media screen and (max-width: 815px) {
+  .techs__list-text {
+    line-height: 15px;
+    font-size: 12px;
+  }
+}
+@media screen and (max-width: 525px) {
+  .techs__list-text {
+    line-height: 15px;
+    font-size: 12px;
+  }
+}

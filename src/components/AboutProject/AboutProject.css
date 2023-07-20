@@ -1,0 +1,54 @@
+.about-project {
+  align-content: center;
+  justify-content: center;
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+}
+.about-project__timing {
+  grid-template-columns: 1fr 4fr;
+  display: grid;
+  width: 100%;
+}
+@media screen and (max-width: 815px) {
+  .about-project__timing {
+    grid-template-columns: 140px auto;
+  }
+}
+@media screen and (max-width: 525px) {
+  .about-project__timing {
+    grid-template-columns: 100px auto;
+  }
+}
+.about-project__timing-item {
+  color: #a0a0a0;
+  line-height: 17px;
+  font-style: normal;
+  text-align: center;
+  padding: 14px 0 14px;
+  font-weight: 500;
+  font-size: 14px;
+}
+@media screen and (max-width: 525px) {
+  .about-project__timing-item {
+    font-size: 11px;
+    padding: 10px 0;
+    line-height: 13px;
+  }
+}
+.about-project__timing-item_head {
+  color: black;
+  padding: 9px 0 10px;
+  background-color: #e8e8e8;
+  font-weight: 400;
+}
+@media screen and (max-width: 525px) {
+  .about-project__timing-item_head {
+    padding-top: 12px;
+  }
+}
+
+.about-project__timing-item_head:first-of-type {
+  color: white;
+  background-color: black;
+}
