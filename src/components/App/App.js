@@ -334,7 +334,7 @@ function App () {
           />
           <Route path="/signup" element={
             loggedIn
-              ? <Navigate to="/" />
+              ? <NotFound />
               :
               <Register
                 onRegister={handleRegister}
@@ -344,7 +344,7 @@ function App () {
           />
           <Route path="/signin" element={
             loggedIn
-              ? <Navigate to="/" />
+              ? <NotFound />
               :
               <Login
                 onSubmit={handleLogin}
